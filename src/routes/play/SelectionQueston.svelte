@@ -56,7 +56,7 @@
 				class="overflow-hidden"
 				style="position: absolute; left: 50%; top: 30%"
 				use:confetti={{
-					particleCount: 100,
+					particleCount: 50,
 					force: 0.7,
 					stageWidth: window.innerWidth / 2,
 					stageHeight: window.innerHeight / 2,

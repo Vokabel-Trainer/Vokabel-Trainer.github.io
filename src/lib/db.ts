@@ -74,7 +74,7 @@ export async function anyCategoriesSelected() {
 	return (await transaction.store.getAllKeys()).length > 0;
 }
 
-export async function getAllvocables() {
+export async function getAllVocables() {
 	const db = await initDb();
 	const transaction = db.transaction(['vocables', 'categories'], 'readonly');
 	const categories = await (await transaction.objectStore('categories').getAll())

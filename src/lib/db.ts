@@ -68,10 +68,14 @@ export async function storeFile(categories: Array<Category>, visibleCategories: 
 	db.close();
 }
 
-export async function anyCategoriesSelected() {
+export async function getSelectedCategories() {
 	const db = await initDb();
 	const transaction = db.transaction('categories', 'readonly');
-	return (await transaction.store.getAllKeys()).length > 0;
+	return (await transaction.store.getAll()).filter((x) => x.visible).map((x) => x.title);
+}
+
+export async function anyCategoriesSelected() {
+	return (await getSelectedCategories()).length > 0;
 }
 
 export async function getAllVocables() {

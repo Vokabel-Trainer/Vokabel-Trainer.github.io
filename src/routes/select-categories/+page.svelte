@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import { storeFile } from '$lib/db';
+	import { getSelectedCategories, storeFile } from '$lib/db';
 	import type { Category } from '$lib/languages';
 	import { languagePairStore } from '$lib/store';
 
@@ -9,28 +9,37 @@
 	}
 
 	let categories = new Array<Category>();
+	let checkedCategories = new Array<string>();
 
 	$: {
-		fetch(`${$languagePairStore!.code}.json`)
-			.then((x) => x.text().then((y) => JSON.parse(y) as Array<Category>))
-			.then((file) => (categories = file));
-	}
-
-	$: categories = categories ?? new Array<Category>();
-
-	$: checkedCategories = [...categories];
-
-	function handleChange(category: Category) {
-		if (checkedCategories.includes(category)) {
-			checkedCategories = [...checkedCategories.filter((x) => x !== category)];
-		} else {
-			checkedCategories = [...checkedCategories, category];
+		if ($languagePairStore != null) {
+			fetch(`${$languagePairStore!.code}.json`)
+				.then((x) => x.text().then((y) => JSON.parse(y) as Array<Category>))
+				.then((file) => (categories = file));
 		}
 	}
 
-	function handleNextClick() {
-		const selectedCategories = checkedCategories!.map((x) => x.title);
-		storeFile(categories!, selectedCategories);
+	$: {
+		getSelectedCategories().then((selectedCategories) =>
+			categories.some(
+				(category) =>
+					(checkedCategories = selectedCategories.includes(category.title)
+						? selectedCategories
+						: categories.map((x) => x.title))
+			)
+		);
+	}
+
+	function handleChange(category: Category) {
+		if (checkedCategories.includes(category.title)) {
+			checkedCategories = [...checkedCategories.filter((x) => x !== category.title)];
+		} else {
+			checkedCategories = [...checkedCategories, category.title];
+		}
+	}
+
+	async function handleNextClick() {
+		await storeFile(categories!, checkedCategories);
 		goto('/');
 	}
 </script>
@@ -42,7 +51,7 @@
 				<div class="card-title">
 					<input
 						type="checkbox"
-						checked={checkedCategories.includes(category)}
+						checked={checkedCategories.includes(category.title)}
 						on:change={() => handleChange(category)}
 						class="checkbox"
 					/>

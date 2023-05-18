@@ -1,0 +1,66 @@
+<script lang="ts">
+	import { goto } from '$app/navigation';
+	import { storeFile } from '$lib/db';
+	import type { Category, File } from '$lib/languageFile';
+	import { languagePairStore } from '$lib/store';
+
+	function getWords(category: Category): Array<string> {
+		return Object.keys(category.values);
+	}
+
+	let languageFile: File | null;
+
+	$: {
+		fetch(`${$languagePairStore!.code}.json`)
+			.then((x) => x.text().then((y) => JSON.parse(y) as File))
+			.then((file) => (languageFile = file));
+	}
+
+	$: categories = languageFile?.categories ?? new Array<Category>();
+
+	$: checkedCategories = [...categories];
+
+	function handleChange(category: Category) {
+		if (checkedCategories.includes(category)) {
+			checkedCategories = [...checkedCategories.filter((x) => x !== category)];
+		} else {
+			checkedCategories = [...checkedCategories, category];
+		}
+	}
+
+	function handleNextClick() {
+		const selectedCategories = checkedCategories!.map((x) => x.title);
+		storeFile(languageFile!, selectedCategories);
+		goto('/');
+	}
+</script>
+
+<div class="flex flex-row w-full justify-center flex-wrap overflow-auto gap-1">
+	{#each categories as category}
+		<div class="card w-96 bg-base-100 shadow-xl">
+			<div class="card-body">
+				<div class="card-title">
+					<input
+						type="checkbox"
+						checked={checkedCategories.includes(category)}
+						on:change={() => handleChange(category)}
+						class="checkbox"
+					/>
+					{category.title}
+				</div>
+				<p>Enthaltene Wörter:</p>
+				<ul>
+					{#each getWords(category) as word}
+						<li class="list-item list-disc">{word}</li>
+					{/each}
+				</ul>
+			</div>
+		</div>
+	{/each}
+</div>
+
+<button
+	class="btn w-32 self-center"
+	on:click={handleNextClick}
+	disabled={checkedCategories.length === 0}>Weiter</button
+>

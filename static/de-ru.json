@@ -1,0 +1,42 @@
+{
+    "categories":[
+        {
+            "title": "Personalpronomen",
+            "values":{
+                "Ich": "Я",
+                "Du": ["вы", "ты"],
+                "Er": "он",
+                "Sie": ["вы", "она", "они"],
+                "Wir": "мы"
+            }
+        },
+        {
+            "title": "Tiere",
+            "values":{
+                "Hund": "собака",
+                "Katze": "кошка",
+                "Wolf": "волк",
+                "Löwe": "лев",
+                "Bär": "медведь"
+            }
+        },
+        {
+            "title": "Wetter",
+            "values":{
+                "Regnet": "дожди",
+                "Schneit": "кажется",
+                "Kalt": "Холод",
+                "Warm": "Тепло"
+            }
+        },
+        {
+            "title": "Natur",
+            "values":{
+                "Sonne": "Солнце",
+                "Baum": "дерево",
+                "Grass": "трава",
+                "Erde": "земля"
+            }
+        }
+    ]
+}

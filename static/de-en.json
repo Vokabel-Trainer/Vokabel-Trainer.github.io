@@ -1,0 +1,42 @@
+{
+    "categories":[
+        {
+            "title": "Personalpronomen",
+            "values":{
+                "Ich": "I",
+                "Du": "You",
+                "Er": "He",
+                "Sie": "She",
+                "Wir": "We"
+            }
+        },
+        {
+            "title": "Tiere",
+            "values":{
+                "Hund": "Dog",
+                "Katze": "Cat",
+                "Wolf": "Wolf",
+                "Löwe": "Lion",
+                "Bär": "Bear"
+            }
+        },
+        {
+            "title": "Wetter",
+            "values":{
+                "Regnet": "Raining",
+                "Schneit": "Snowing",
+                "Kalt": "Cold",
+                "Warm": "Warm"
+            }
+        },
+        {
+            "title": "Natur",
+            "values":{
+                "Sonne": "Sun",
+                "Baum": "Tree",
+                "Grass": "Grass",
+                "Erde": "Earth"
+            }
+        }
+    ]
+}

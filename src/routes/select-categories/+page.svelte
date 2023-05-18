@@ -1,22 +1,22 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { storeFile } from '$lib/db';
-	import type { Category, File } from '$lib/languageFile';
+	import type { Category } from '$lib/languages';
 	import { languagePairStore } from '$lib/store';
 
 	function getWords(category: Category): Array<string> {
 		return Object.keys(category.values);
 	}
 
-	let languageFile: File | null;
+	let categories = new Array<Category>();
 
 	$: {
 		fetch(`${$languagePairStore!.code}.json`)
-			.then((x) => x.text().then((y) => JSON.parse(y) as File))
-			.then((file) => (languageFile = file));
+			.then((x) => x.text().then((y) => JSON.parse(y) as Array<Category>))
+			.then((file) => (categories = file));
 	}
 
-	$: categories = languageFile?.categories ?? new Array<Category>();
+	$: categories = categories ?? new Array<Category>();
 
 	$: checkedCategories = [...categories];
 
@@ -30,7 +30,7 @@
 
 	function handleNextClick() {
 		const selectedCategories = checkedCategories!.map((x) => x.title);
-		storeFile(languageFile!, selectedCategories);
+		storeFile(categories!, selectedCategories);
 		goto('/');
 	}
 </script>

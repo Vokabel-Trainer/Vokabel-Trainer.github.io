@@ -1,6 +1,6 @@
 import { openDB } from 'idb';
 import type { DBSchema } from 'idb/build/entry';
-import type { File } from './languageFile';
+import type { Category } from './languages';
 
 export type Vocable = {
 	lang1: string;
@@ -37,7 +37,7 @@ export async function initDb() {
 	});
 }
 
-export async function storeFile(file: File, visibleCategories: Array<string>) {
+export async function storeFile(categories: Array<Category>, visibleCategories: Array<string>) {
 	const db = await initDb();
 	const transaction = db.transaction(['vocables', 'categories'], 'readwrite');
 
@@ -46,7 +46,7 @@ export async function storeFile(file: File, visibleCategories: Array<string>) {
 	const categoriesStore = transaction.objectStore('categories');
 	categoriesStore.clear();
 
-	for (const category of file.categories) {
+	for (const category of categories) {
 		await categoriesStore.put({
 			title: category.title,
 			visible: visibleCategories.includes(category.title)

@@ -1,192 +1,152 @@
-{
-	"categories": [
-		{
-			"title": "Personalpronomen",
-			"values": {
-				"Ich": "Я",
-				"Du": ["вы", "ты"],
-				"Er": "он",
-				"Sie": ["вы", "она", "они"],
-				"Wir": "мы"
-			}
-		},
-		{
-			"title": "Tiere",
-			"values": {
-				"Hund": "собака",
-				"Katze": "кошка",
-				"Wolf": "волк",
-				"Löwe": "лев",
-				"Bär": "медведь"
-			}
-		},
-		{
-			"title": "Wetter",
-			"values": {
-				"Regnet": "дожди",
-				"Schneit": "кажется",
-				"Kalt": "Холод",
-				"Warm": "Тепло"
-			}
-		},
-		{
-			"title": "Natur",
-			"values": {
-				"Sonne": "Солнце",
-				"Baum": "дерево",
-				"Grass": "трава",
-				"Erde": "земля"
-			}
-		},
-		{
-			"title": "Zahlen",
-			"values": {
-				"один": "Eins",
-				"два": "Zwei",
-				"три": "Drei",
-				"четыре": "Vier",
-				"пять": "Fünf",
-				"шесть": "Sechs",
-				"семь": "Sieben",
-				"восемь": "Acht",
-				"девять": "Neun",
-				"десять": "Zehn"
-			}
-		},
-		{
-			"title": "Farben",
-			"values": {
-				"черный": "Schwarz",
-				"белый": "Weiß",
-				"красный": "Rot",
-				"синий": "Blau",
-				"желтый": "Gelb",
-				"зеленый": "Grün",
-				"коричневый": "Braun",
-				"серый": "Grau",
-				"оранжевый": "Orange",
-				"фиолетовый": "Violett"
-			}
-		},
-
-		{
-			"title": "Familie",
-			"values": {
-				"папа": "Papa",
-				"сестра": "Schwester",
-				"брат": "Bruder",
-				"дочь": "Tochter",
-				"сын": "Sohn",
-				"родители": "Eltern",
-				"бабушка": "Oma",
-				"дедушка": "Opa",
-				"ребенок": "Kind"
-			}
-		},
-		{
-			"title": "Tiere",
-			"values": {
-				"кошка": "Katze",
-				"собака": "Hund",
-				"птица": "Vogel",
-				"лошадь": "Pferd",
-				"кролик": "Hase",
-				"заяц": "Kaninchen",
-				"коза": "Ziege",
-				"корова": "Kuh",
-				"свинья": "Schwein",
-				"рыба": "Fisch"
-			}
-		},
-		{
-			"title": "Essen",
-			"values": {
-				"яблоко": "Apfel",
-				"хлеб": "Brot",
-				"молоко": "Milch",
-				"мясо": "Fleisch",
-				"овощи": "Gemüse",
-				"фрукты": "Früchte",
-				"рис": "Reis",
-				"яйцо": "Ei",
-				"сахар": "Zucker",
-				"соль": "Salz"
-			}
-		},
-		{
-			"title": "Kleidung",
-			"values": {
-				"шапка": "Mütze",
-				"шарф": "Schal",
-				"пальто": "Mantel",
-				"брюки": "Hose",
-				"платье": "Kleid",
-				"рубашка": "Hemd",
-				"юбка": "Rock",
-				"носки": "Socken",
-				"обувь": "Schuhe",
-				"перчатки": "Handschuhe"
-			}
-		},
-		{
-			"title": "Körper",
-			"values": {
-				"голова": "Kopf",
-				"глаза": "Augen",
-				"уши": "Ohren",
-				"нос": "Nase",
-				"рот": "Mund",
-				"зубы": "Zähne",
-				"волосы": "Haare",
-				"руки": "Hände",
-				"ноги": "Beine",
-				"сердце": "Herz"
-			}
-		},
-		{
-			"title": "Verben",
-			"values": {
-				"идти": "gehen",
-				"говорить": "sprechen",
-				"видеть": "sehen",
-				"слушать": "hören",
-				"есть": "essen",
-				"пить": "trinken",
-				"спать": "schlafen",
-				"работать": "arbeiten",
-				"учиться": "lernen",
-				"играть": "spielen"
-			}
-		},
-		{
-			"title": "Länder",
-			"values": {
-				"Россия": "Russland",
-				"Германия": "Deutschland",
-				"Франция": "Frankreich",
-				"Италия": "Italien",
-				"США": "USA",
-				"Великобритания": "Großbritannien",
-				"Испания": "Spanien",
-				"Канада": "Kanada",
-				"Австралия": "Australien",
-				"Япония": "Japan"
-			}
-		},
-		{
-			"title": "Begrüßung",
-			"values": {
-				"привет": "Hallo",
-				"пока": "Tschüss",
-				"спасибо": "Danke",
-				"извините": "Entschuldigung",
-				"пожалуйста": "Bitte",
-				"как дела?": "Wie geht es?",
-				"хорошо": "gut",
-				"понимать": "verstehen",
-				"готов": "bereit",
-				"до свидания": "Auf Wiedersehen"
-			}
+[
+	{
+		"title": "Zahlen",
+		"values": {
+			"Eins": "один",
+			"Zwei": "два",
+			"Drei": "три",
+			"Vier": "четыре",
+			"Fünf": "пять",
+			"Sechs": "шесть",
+			"Sieben": "семь",
+			"Acht": "восемь",
+			"Neun": "девять",
+			"Zehn": "десять"
 		}
-	]
-}
+	},
+	{
+		"title": "Farben",
+		"values": {
+			"Schwarz": "черный",
+			"Weiß": "белый",
+			"Rot": "красный",
+			"Blau": "синий",
+			"Gelb": "желтый",
+			"Grün": "зеленый",
+			"Braun": "коричневый",
+			"Grau": "серый",
+			"Orange": "оранжевый",
+			"Violett": "фиолетовый"
+		}
+	},
+
+	{
+		"title": "Familie",
+		"values": {
+			"Papa": "папа",
+			"Schwester": "сестра",
+			"Bruder": "брат",
+			"Tochter": "дочь",
+			"Sohn": "сын",
+			"Eltern": "родители",
+			"Oma": "бабушка",
+			"Opa": "дедушка",
+			"Kind": "ребенок"
+		}
+	},
+	{
+		"title": "Tiere",
+		"values": {
+			"Katze": "кошка",
+			"Hund": "собака",
+			"Vogel": "птица",
+			"Pferd": "лошадь",
+			"Hase": "кролик",
+			"Kaninchen": "заяц",
+			"Ziege": "коза",
+			"Kuh": "корова",
+			"Schwein": "свинья",
+			"Fisch": "рыба"
+		}
+	},
+	{
+		"title": "Essen",
+		"values": {
+			"Apfel": "яблоко",
+			"Brot": "хлеб",
+			"Milch": "молоко",
+			"Fleisch": "мясо",
+			"Gemüse": "овощи",
+			"Früchte": "фрукты",
+			"Reis": "рис",
+			"Ei": "яйцо",
+			"Zucker": "сахар",
+			"Salz": "соль"
+		}
+	},
+	{
+		"title": "Kleidung",
+		"values": {
+			"Mütze": "шапка",
+			"Schal": "шарф",
+			"Mantel": "пальто",
+			"Hose": "брюки",
+			"Kleid": "платье",
+			"Hemd": "рубашка",
+			"Rock": "юбка",
+			"Socken": "носки",
+			"Schuhe": "обувь",
+			"Handschuhe": "перчатки"
+		}
+	},
+	{
+		"title": "Körper",
+		"values": {
+			"Kopf": "голова",
+			"Augen": "глаза",
+			"Ohren": "уши",
+			"Nase": "нос",
+			"Mund": "рот",
+			"Zähne": "зубы",
+			"Haare": "волосы",
+			"Hände": "руки",
+			"Beine": "ноги",
+			"Herz": "сердце"
+		}
+	},
+	{
+		"title": "Verben",
+		"values": {
+			"gehen": "идти",
+			"sprechen": "говорить",
+			"sehen": "видеть",
+			"hören": "слушать",
+			"essen": "есть",
+			"trinken": "пить",
+			"schlafen": "спать",
+			"arbeiten": "работать",
+			"lernen": "учиться",
+			"spielen": "играть"
+		}
+	},
+	{
+		"title": "Länder",
+		"values": {
+			"Russland": "Россия",
+			"Deutschland": "Германия",
+			"Frankreich": "Франция",
+			"Italien": "Италия",
+			"USA": "США",
+			"Großbritannien": "Великобритания",
+			"Spanien": "Испания",
+			"Kanada": "Канада",
+			"Australien": "Австралия",
+			"Japan": "Япония"
+		}
+	},
+	{
+		"title": "Begrüßung",
+		"values": {
+			"Hallo": "привет",
+			"Tschüss": "пока",
+			"Danke": "спасибо",
+			"Entschuldigung": "извините",
+			"Bitte": "пожалуйста",
+			"Wie geht es?": "как дела?",
+			"gut": "хорошо",
+			"verstehen": "понимать",
+			"bereit": "готов",
+			"Auf Wiedersehen": "до свидания"
+		}
+	}
+]

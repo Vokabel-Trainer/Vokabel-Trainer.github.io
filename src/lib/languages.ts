@@ -1,5 +1,10 @@
 import { languagePairStore } from './store';
 
+export type Category = {
+	title: string;
+	values: Record<string, string | Array<string>>;
+};
+
 export function getLanguages(): Array<LanguagePair> {
 	return [
 		{
@@ -16,12 +21,17 @@ export function getLanguages(): Array<LanguagePair> {
 			from: Language.German,
 			to: Language.Russian,
 			code: 'de-ru'
-		}
+		},
 		// , {
 		// 	from: Language.Russian,
 		// 	to: Language.German,
 		// 	code: 'ru-de'
 		// }
+		{
+			from: Language.German,
+			to: Language.Spain,
+			code: 'de-es'
+		}
 	];
 }
 
@@ -33,6 +43,8 @@ export function getName(language: Language) {
 			return 'Englisch';
 		case Language.Russian:
 			return 'Russisch';
+		case Language.Spain:
+			return 'Spanisch';
 	}
 }
 
@@ -45,7 +57,8 @@ export type LanguagePair = {
 export enum Language {
 	German,
 	English,
-	Russian
+	Russian,
+	Spain
 }
 
 export function setSelectLanguage(language: LanguagePair) {

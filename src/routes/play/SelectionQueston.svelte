@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { getSelectedLanguage } from '$lib/languages';
 	import { confetti } from '@neoconfetti/svelte';
 
 	export let question: string;
@@ -15,14 +16,25 @@
 	}
 
 	function checkAnswer(answer: string) {
-		if (correct != null){
+		if ('speechSynthesis' in window) {
+			if (window.speechSynthesis.speaking) {
+				window.speechSynthesis.cancel();
+			}
+
+			const speechSynthesisUtterance = new SpeechSynthesisUtterance(answer);
+			speechSynthesisUtterance.lang = getSelectedLanguage()!.code.split('-')[1];
+
+			window.speechSynthesis.speak(speechSynthesisUtterance);
+		}
+
+		if (correct != null) {
 			return;
 		}
 		correct = correctAnswers.includes(answer);
 	}
 
 	async function nextPage() {
-		onAnswer && await onAnswer(correct!);
+		onAnswer && (await onAnswer(correct!));
 	}
 </script>
 
@@ -32,9 +44,7 @@
 	<div class="flex flex-row w-full justify-center flex-wrap gap-1">
 		{#each possibleAnswers as answer}
 			<button
-				class={`btn ${
-					correct != null && correctAnswers.includes(answer) ? 'btn-success' : ''
-				}`}
+				class={`btn ${correct != null && correctAnswers.includes(answer) ? 'btn-success' : ''}`}
 				on:click={() => checkAnswer(answer)}>{answer}</button
 			>
 		{/each}

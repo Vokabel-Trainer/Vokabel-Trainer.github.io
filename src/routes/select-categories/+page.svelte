@@ -48,12 +48,14 @@
 					/>
 					{category.title}
 				</div>
-				<p>Enthaltene Wörter:</p>
-				<ul>
-					{#each getWords(category) as word}
-						<li class="list-item list-disc">{word}</li>
-					{/each}
-				</ul>
+
+				<div class="collapse collapse-arrow bg-base-100 p-1">
+					<input type="checkbox" />
+					<div class="collapse-title text-xl font-medium">Enthaltene Wörter:</div>
+					<div class="collapse-content">
+						{getWords(category).join(', ')}
+					</div>
+				</div>
 			</div>
 		</div>
 	{/each}

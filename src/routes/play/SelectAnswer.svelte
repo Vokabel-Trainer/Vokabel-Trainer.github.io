@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { getSelectedLanguage } from '$lib/languages';
 	import { confetti } from '@neoconfetti/svelte';
 
 	export let question: string;
-	export let correctAnswers: string[];
+	export let checkAnswer: (text: string) => boolean;
 	export let possibleAnswers: string[];
+	export let correctAnswers: string[];
 	export let onAnswer: ((correct: boolean) => Promise<void>) | null = null;
 
 	let correct: boolean | null = null;
@@ -13,24 +13,6 @@
 		correct = null;
 		// Refresh when temp changes.
 		const temp = question;
-	}
-
-	function checkAnswer(answer: string) {
-		if ('speechSynthesis' in window) {
-			if (window.speechSynthesis.speaking) {
-				window.speechSynthesis.cancel();
-			}
-
-			const speechSynthesisUtterance = new SpeechSynthesisUtterance(answer);
-			speechSynthesisUtterance.lang = getSelectedLanguage()!.code.split('-')[1];
-
-			window.speechSynthesis.speak(speechSynthesisUtterance);
-		}
-
-		if (correct != null) {
-			return;
-		}
-		correct = correctAnswers.includes(answer);
 	}
 
 	async function nextPage() {
@@ -45,7 +27,7 @@
 		{#each possibleAnswers as answer}
 			<button
 				class={`btn ${correct != null && correctAnswers.includes(answer) ? 'btn-success' : ''}`}
-				on:click={() => checkAnswer(answer)}>{answer}</button
+				on:click={() => (correct = checkAnswer(answer))}>{answer}</button
 			>
 		{/each}
 	</div>

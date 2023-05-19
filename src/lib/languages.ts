@@ -73,3 +73,25 @@ export function getSelectedLanguage() {
 	}
 	return JSON.parse(selectLanguage) as LanguagePair;
 }
+
+export enum LearningType {
+	None = 0,
+	SelectAnswers = 1,
+	EnterAnswers = 2
+}
+
+export function getAllLearningTypes() {
+	return [LearningType.SelectAnswers, LearningType.EnterAnswers];
+}
+
+export function setLearningTypes(learningType: LearningType) {
+	localStorage.setItem('learningType', JSON.stringify(learningType));
+}
+
+export function getLearningTypes() {
+	const learningType = localStorage.getItem('learningType');
+	if (!learningType) {
+		return LearningType.SelectAnswers;
+	}
+	return JSON.parse(learningType) as LearningType;
+}

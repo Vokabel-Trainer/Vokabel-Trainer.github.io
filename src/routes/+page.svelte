@@ -7,4 +7,5 @@
 	<a class="btn" href="/play">Starten</a>
 	<a class="btn" href="/select-categories">Kategorien auswählen</a>
 	<a class="btn" href="/select-language">Sprache ändern</a>
+	<a class="btn" href="/settings">Einstellungen</a>
 </div>

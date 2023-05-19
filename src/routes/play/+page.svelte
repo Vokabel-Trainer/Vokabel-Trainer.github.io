@@ -1,10 +1,18 @@
 <script lang="ts">
 	import { getAllVocables, saveVocable, type Vocable } from '$lib/db';
-	import { randomIntInRange, shuffleArray } from '$lib/methods';
-	import SelectionQueston from './SelectionQueston.svelte';
+	import {
+		getAllLearningTypes,
+		getLearningTypes,
+		getSelectedLanguage,
+		LearningType
+	} from '$lib/languages';
+	import { hasFlag, randomIntInRange, shuffleArray } from '$lib/methods';
+	import EnterAnswer from './EnterAnswer.svelte';
+	import SelectAnswer from './SelectAnswer.svelte';
 
 	let vocables = new Array<Vocable>();
 	let vocable: Vocable | null = null;
+	let learningType: LearningType = getLearningTypes();
 
 	getAllVocables().then((x) => {
 		vocables = x;
@@ -27,6 +35,21 @@
 			.slice(0, 5);
 	}
 
+	function checkAnswer(text: string) {
+		if ('speechSynthesis' in window) {
+			if (window.speechSynthesis.speaking) {
+				window.speechSynthesis.cancel();
+			}
+
+			const speechSynthesisUtterance = new SpeechSynthesisUtterance(text);
+			speechSynthesisUtterance.lang = getSelectedLanguage()!.code.split('-')[1];
+
+			window.speechSynthesis.speak(speechSynthesisUtterance);
+		}
+
+		return makeArray(vocable!).some((x) => x.toLocaleLowerCase() === text.toLocaleLowerCase());
+	}
+
 	async function handleAnswer(correct: boolean) {
 		vocables = vocables.filter((x) => x !== vocable);
 		vocable!.level += correct ? 1 : -1;
@@ -43,6 +66,15 @@
 		vocables.splice(nextIndex, 0, vocable!);
 		vocable = vocables[0];
 	}
+
+	let currentLearningType = LearningType.None;
+	$: {
+		// Rerun when the vocable changes
+		const temp = vocable;
+
+		const learningTypes = getAllLearningTypes().filter((x) => hasFlag(learningType, x));
+		currentLearningType = learningTypes[randomIntInRange(0, learningTypes.length - 1)];
+	}
 </script>
 
 <svelte:head>
@@ -51,10 +83,22 @@
 </svelte:head>
 
 {#if vocable != null}
-	<SelectionQueston
-		question={vocable.lang1}
-		correctAnswers={makeArray(vocable)}
-		possibleAnswers={shuffleArray([makeArray(vocable)[0], ...getSomeAnswers()])}
-		onAnswer={handleAnswer}
-	/>
+	{#key vocable}
+		{#if currentLearningType === LearningType.SelectAnswers}
+			<SelectAnswer
+				question={vocable.lang1}
+				{checkAnswer}
+				correctAnswers={makeArray(vocable)}
+				possibleAnswers={shuffleArray([makeArray(vocable)[0], ...getSomeAnswers()])}
+				onAnswer={handleAnswer}
+			/>
+		{:else if currentLearningType === LearningType.EnterAnswers}
+			<EnterAnswer
+				question={vocable.lang1}
+				{checkAnswer}
+				correctAnswers={makeArray(vocable)}
+				onAnswer={handleAnswer}
+			/>
+		{/if}
+	{/key}
 {/if}

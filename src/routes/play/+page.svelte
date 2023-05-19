@@ -29,34 +29,18 @@
 
 	async function handleAnswer(correct: boolean) {
 		vocables = vocables.filter((x) => x !== vocable);
-		if (correct) {
-			vocable!.failed = 0;
-			vocable!.success++;
-		} else {
-			vocable!.failed++;
-			vocable!.success = 0;
-		}
+		vocable!.level += correct ? 1 : -1;
 
 		await saveVocable(vocable!);
 
-		const elementCount = vocables.length;
-		let index = 0;
+		const minPosition = vocables.findIndex((x) => x.level >= vocable!.level);
+		const maxPosition = vocables.findLastIndex((x) => x.level < vocable!.level) + 1;
+		const nextIndex = randomIntInRange(
+			Math.max(minPosition, 1),
+			maxPosition === -1 ? vocables.length : maxPosition
+		);
 
-		if (vocable!.failed > 3) {
-			index = randomIntInRange(3, 5);
-		} else if (vocable!.failed > 0) {
-			index = randomIntInRange(5, 8);
-		} else if (vocable!.success > 10) {
-			index = elementCount;
-		} else if (vocable!.success > 5) {
-			index = randomIntInRange(30, 50);
-		} else if (vocable!.success > 3) {
-			index = randomIntInRange(10, 30);
-		} else {
-			index = randomIntInRange(5, 10);
-		}
-
-		vocables.splice(Math.min(index, elementCount), 0, vocable!);
+		vocables.splice(nextIndex, 0, vocable!);
 		vocable = vocables[0];
 	}
 </script>

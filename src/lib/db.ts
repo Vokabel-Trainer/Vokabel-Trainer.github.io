@@ -6,8 +6,7 @@ export type Vocable = {
 	lang1: string;
 	lang2: string | Array<string>;
 	category: string;
-	success: number;
-	failed: number;
+	level: number;
 };
 
 interface LanguageDb extends DBSchema {
@@ -27,11 +26,28 @@ interface LanguageDb extends DBSchema {
 }
 
 export async function initDb() {
-	return await openDB<LanguageDb>('Language', 1, {
+	return await openDB<LanguageDb>('Language', 3, {
 		upgrade(database, _oldVersion, _newVersion, _transaction, _event) {
 			if (_oldVersion < 1) {
 				database.createObjectStore('vocables');
 				database.createObjectStore('categories', { keyPath: 'title' });
+			} else if (_oldVersion < 3) {
+				_transaction
+					.objectStore('vocables')
+					.getAll()
+					.then((vocables) =>
+						vocables.forEach((vocable) => {
+							_transaction.objectStore('vocables').put(
+								{
+									lang1: vocable.lang1,
+									lang2: vocable.lang2,
+									category: vocable.category,
+									level: 0
+								},
+								vocable.lang1
+							);
+						})
+					);
 			}
 		}
 	});
@@ -57,8 +73,7 @@ export async function storeFile(categories: Array<Category>, visibleCategories: 
 					lang1: vocable,
 					lang2: category.values[vocable],
 					category: category.title,
-					success: 0,
-					failed: 0
+					level: 0
 				},
 				vocable
 			);
@@ -86,7 +101,7 @@ export async function getAllVocables() {
 		.map((x) => x.title);
 	return (await transaction.objectStore('vocables').getAll())
 		.filter((x) => categories.includes(x.category))
-		.sort((x, y) => (y.failed - x.failed !== 0 ? y.failed - x.failed : x.success - y.success));
+		.sort((x, y) => x.level - y.level);
 }
 
 export async function saveVocable(vocable: Vocable) {

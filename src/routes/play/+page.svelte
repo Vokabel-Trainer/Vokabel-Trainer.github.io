@@ -35,7 +35,7 @@
 			.slice(0, 5);
 	}
 
-	function checkAnswer(text: string) {
+	function playAudio(text: string){
 		if ('speechSynthesis' in window) {
 			if (window.speechSynthesis.speaking) {
 				window.speechSynthesis.cancel();
@@ -46,7 +46,9 @@
 
 			window.speechSynthesis.speak(speechSynthesisUtterance);
 		}
+	}
 
+	function checkAnswer(text: string) {
 		return makeArray(vocable!).some((x) => x.toLocaleLowerCase() === text.toLocaleLowerCase());
 	}
 
@@ -88,6 +90,7 @@
 			<SelectAnswer
 				question={vocable.lang1}
 				{checkAnswer}
+				playAudio={playAudio}
 				correctAnswers={makeArray(vocable)}
 				possibleAnswers={shuffleArray([makeArray(vocable)[0], ...getSomeAnswers()])}
 				onAnswer={handleAnswer}
@@ -95,7 +98,10 @@
 		{:else if currentLearningType === LearningType.EnterAnswers}
 			<EnterAnswer
 				question={vocable.lang1}
-				{checkAnswer}
+				checkAnswer={(text) => {
+					playAudio(text);
+					return checkAnswer(text);
+				}}
 				correctAnswers={makeArray(vocable)}
 				onAnswer={handleAnswer}
 			/>

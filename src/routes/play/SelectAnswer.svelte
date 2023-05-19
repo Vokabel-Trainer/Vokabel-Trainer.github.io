@@ -2,6 +2,7 @@
 	import { confetti } from '@neoconfetti/svelte';
 
 	export let question: string;
+	export let playAudio: (text: string) => void;
 	export let checkAnswer: (text: string) => boolean;
 	export let possibleAnswers: string[];
 	export let correctAnswers: string[];
@@ -29,6 +30,7 @@
 		if (correct == null) {
 			selectedAnswer = answer;
 		}
+		playAudio(answer);
 	}
 
 	function getButtonClass(answer: string, selectedAnswer: string | null, correct: boolean | null) {

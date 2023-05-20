@@ -1,6 +1,6 @@
 # Vocabulary Trainer
 
-Welcome to the Vocabulary Trainer! This is a web-based application that allows you to learn and practice vocabulary in German, English, Spanish, and Russian. The Vocabulary Trainer was developed using the Svelte framework and can be accessed at the following URL: [https://vocabulary-trainer.github.io/](https://vocabulary-trainer.github.io/).
+Welcome to the Vocabulary Trainer! This is a web-based application that allows you to learn and practice vocabulary in German, English, Spanish, and Russian. The Vocabulary Trainer was developed using the Svelte framework and can be accessed at the following URL: [https://vokabel-trainer.github.io/](https://vokabel-trainer.github.io/).
 
 ## Translations
 

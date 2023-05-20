@@ -68,17 +68,24 @@
 		on:click={nextPage}
 		disabled={selectedAnswer == null}>Weiter</button
 	>
-	{#if correct}
-		<div
-			class="overflow-hidden"
-			style="position: absolute; left: 50%; top: 30%"
-			use:confetti={{
-				particleCount: 50,
-				force: 0.7,
-				stageWidth: window.innerWidth / 2,
-				stageHeight: window.innerHeight / 2,
-				colors: ['#ff3e00', '#40b3ff', '#676778']
-			}}
-		/>
+
+	{#if correct != null}
+		{#if correct}
+			<div
+				class="overflow-hidden"
+				style="position: absolute; left: 50%; top: 30%"
+				use:confetti={{
+					particleCount: 50,
+					force: 0.7,
+					stageWidth: window.innerWidth / 2,
+					stageHeight: window.innerHeight / 2,
+					colors: ['#ff3e00', '#40b3ff', '#676778']
+				}}
+			/>
+		{/if}
+
+		{#if currentOutputType === OutputType.Audio}
+			Übersetzung: {question}
+		{/if}
 	{/if}
 </div>

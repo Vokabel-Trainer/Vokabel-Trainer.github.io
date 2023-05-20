@@ -107,11 +107,11 @@ export function getAllOutputTypes() {
 }
 
 export function setOutputTypes(inputType: OutputType) {
-	localStorage.setItem('inputType', JSON.stringify(inputType));
+	localStorage.setItem('outputType', JSON.stringify(inputType));
 }
 
 export function getOutputTypes() {
-	const inputType = localStorage.getItem('inputType');
+	const inputType = localStorage.getItem('outputType');
 	if (!inputType) {
 		return OutputType.Text | OutputType.Audio;
 	}

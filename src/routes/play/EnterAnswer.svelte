@@ -76,5 +76,9 @@
 				{/each}
 			{/if}
 		{/if}
+
+		{#if currentOutputType === OutputType.Audio}
+			Übersetzung: {question}
+		{/if}
 	{/if}
 </div>

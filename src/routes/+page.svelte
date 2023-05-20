@@ -18,4 +18,5 @@
 		>Kategorien auswählen</a
 	>
 	<a class="btn" href="/settings">Einstellungen</a>
+	<a class="btn" href="/aboutus">Über uns</a>
 </div>

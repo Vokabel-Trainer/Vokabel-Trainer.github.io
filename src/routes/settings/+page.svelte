@@ -1,23 +1,41 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
-	import { LearningType, getLearningTypes, setLearningTypes } from '$lib/languages';
+	import {
+		InputType,
+		OutputType,
+		getInputTypes,
+		getOutputTypes,
+		setInputTypes,
+		setOutputTypes
+	} from '$lib/languages';
 	import { addFlag, hasFlag, removeFlag } from '$lib/methods';
 
-	let learningTypes = LearningType.None;
+	let inputTypes = InputType.None;
+	let outputTypes = OutputType.None;
 
 	$: {
 		if (browser) {
-			learningTypes = getLearningTypes();
+			inputTypes = getInputTypes();
+			outputTypes = getOutputTypes();
 		}
 	}
 
-	function handleChange(learningType: LearningType) {
-		if (hasFlag(learningTypes, learningType)) {
-			learningTypes = removeFlag(learningTypes, learningType);
+	function handleInputChange(inputType: InputType) {
+		if (hasFlag(inputTypes, inputType)) {
+			inputTypes = removeFlag(inputTypes, inputType);
 		} else {
-			learningTypes = addFlag(learningTypes, learningType);
+			inputTypes = addFlag(inputTypes, inputType);
 		}
-		setLearningTypes(learningTypes);
+		setInputTypes(inputTypes);
+	}
+
+	function handleOutputChange(outputType: OutputType) {
+		if (hasFlag(outputTypes, outputType)) {
+			outputTypes = removeFlag(outputTypes, outputType);
+		} else {
+			outputTypes = addFlag(outputTypes, outputType);
+		}
+		setOutputTypes(outputTypes);
 	}
 </script>
 
@@ -29,15 +47,39 @@
 <div class="flex flex-row w-full justify-center flex-wrap overflow-auto gap-1">
 	<div class="card w-64 bg-base-100 shadow-xl">
 		<div class="card-body">
-			<div class="card-title">Arten der Aufgaben</div>
+			<div class="card-title">Arten der Ausgabe</div>
+
+			<div class="flex flex-col">
+				<div class="flex">
+					<p>Text</p>
+					<input
+						type="checkbox"
+						checked={hasFlag(outputTypes, OutputType.Text)}
+						on:change={() => handleOutputChange(OutputType.Text)}
+					/>
+				</div>
+
+				<div class="flex">
+					<p>Audio</p>
+					<input
+						type="checkbox"
+						checked={hasFlag(outputTypes, OutputType.Audio)}
+						on:change={() => handleOutputChange(OutputType.Audio)}
+					/>
+				</div>
+			</div>
+		</div>
+
+		<div class="card-body">
+			<div class="card-title">Arten der Eingabe</div>
 
 			<div class="flex flex-col">
 				<div class="flex">
 					<p>Antworten auswählen</p>
 					<input
 						type="checkbox"
-						checked={hasFlag(learningTypes, LearningType.SelectAnswers)}
-						on:change={() => handleChange(LearningType.SelectAnswers)}
+						checked={hasFlag(inputTypes, InputType.SelectAnswers)}
+						on:change={() => handleInputChange(InputType.SelectAnswers)}
 					/>
 				</div>
 
@@ -45,8 +87,8 @@
 					<p>Antwort eingeben</p>
 					<input
 						type="checkbox"
-						checked={hasFlag(learningTypes, LearningType.EnterAnswers)}
-						on:change={() => handleChange(LearningType.EnterAnswers)}
+						checked={hasFlag(inputTypes, InputType.EnterAnswers)}
+						on:change={() => handleInputChange(InputType.EnterAnswers)}
 					/>
 				</div>
 			</div>

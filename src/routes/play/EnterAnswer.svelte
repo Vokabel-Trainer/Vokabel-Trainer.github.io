@@ -1,5 +1,8 @@
 <script lang="ts">
+	import { OutputType, getAllOutputTypes, getOutputTypes } from '$lib/languages';
+	import { getRandomChoice, hasFlag } from '$lib/methods';
 	import { confetti } from '@neoconfetti/svelte';
+	import Question from './Question.svelte';
 
 	export let question: string;
 	export let correctAnswers: string[];
@@ -24,10 +27,16 @@
 		}
 		onAnswer && (await onAnswer(correct!));
 	}
+
+	const outputType = getOutputTypes();
+
+	let currentOutputType = getRandomChoice(
+		getAllOutputTypes().filter((x) => hasFlag(outputType, x))
+	);
 </script>
 
 <div class="flex-1 flex flex-col justify-center items-center">
-	<p class="text-center mb-1 font-bold">{question}</p>
+	<Question {question} {playAudio} answer={correctAnswers[0]} outputType={currentOutputType} />
 
 	<form on:submit={nextClick}>
 		<div class="flex flex-row w-full justify-center flex-wrap gap-1">
@@ -57,9 +66,15 @@
 			/>
 		{:else}
 			Richtige Antworten:
-			{#each correctAnswers as correctAnswer}
-				<button class="btn" on:click={() => playAudio(correctAnswer)}>{correctAnswer}</button>
-			{/each}
+			{#if currentOutputType === OutputType.Audio}
+				<p>
+					{correctAnswers.join(', ')}
+				</p>
+			{:else}
+				{#each correctAnswers as correctAnswer}
+					<button class="btn" on:click={() => playAudio(correctAnswer)}>{correctAnswer}</button>
+				{/each}
+			{/if}
 		{/if}
 	{/if}
 </div>

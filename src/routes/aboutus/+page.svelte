@@ -49,6 +49,7 @@
 		keine Registrierung erforderlich ist. Du kannst direkt auf die Lernmaterialien zugreifen und
 		sofort mit dem Aufbau deines Vokabulars beginnen.
 	</p>
+	<br />
 	<p>
 		Starte noch heute dein Sprachabenteuer mit dem Vokabel-Trainer und erlebe, wie das Erlernen von
 		Vokabeln zu einer unterhaltsamen und lohnenden Erfahrung wird!

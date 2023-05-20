@@ -74,24 +74,46 @@ export function getSelectedLanguage() {
 	return JSON.parse(selectLanguage) as LanguagePair;
 }
 
-export enum LearningType {
+export enum InputType {
 	None = 0,
 	SelectAnswers = 1,
 	EnterAnswers = 2
 }
 
-export function getAllLearningTypes() {
-	return [LearningType.SelectAnswers, LearningType.EnterAnswers];
+export function getAllInputTypes() {
+	return [InputType.SelectAnswers, InputType.EnterAnswers];
 }
 
-export function setLearningTypes(learningType: LearningType) {
-	localStorage.setItem('learningType', JSON.stringify(learningType));
+export function setInputTypes(inputType: InputType) {
+	localStorage.setItem('inputType', JSON.stringify(inputType));
 }
 
-export function getLearningTypes() {
-	const learningType = localStorage.getItem('learningType');
-	if (!learningType) {
-		return LearningType.SelectAnswers;
+export function getInputTypes() {
+	const inputType = localStorage.getItem('inputType');
+	if (!inputType) {
+		return InputType.SelectAnswers;
 	}
-	return JSON.parse(learningType) as LearningType;
+	return JSON.parse(inputType) as InputType;
+}
+
+export enum OutputType {
+	None = 0,
+	Text = 1,
+	Audio = 2
+}
+
+export function getAllOutputTypes() {
+	return [OutputType.Text, OutputType.Audio];
+}
+
+export function setOutputTypes(inputType: OutputType) {
+	localStorage.setItem('inputType', JSON.stringify(inputType));
+}
+
+export function getOutputTypes() {
+	const inputType = localStorage.getItem('inputType');
+	if (!inputType) {
+		return OutputType.Text | OutputType.Audio;
+	}
+	return JSON.parse(inputType) as OutputType;
 }

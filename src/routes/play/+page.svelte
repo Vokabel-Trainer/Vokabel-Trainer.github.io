@@ -1,18 +1,13 @@
 <script lang="ts">
 	import { getAllVocables, saveVocable, type Vocable } from '$lib/db';
-	import {
-		getAllLearningTypes,
-		getLearningTypes,
-		getSelectedLanguage,
-		LearningType
-	} from '$lib/languages';
-	import { hasFlag, randomIntInRange, shuffleArray } from '$lib/methods';
+	import { getAllInputTypes, getInputTypes, getSelectedLanguage, InputType } from '$lib/languages';
+	import { getRandomChoice, getRandomNumberInRange, hasFlag, shuffleArray } from '$lib/methods';
 	import EnterAnswer from './EnterAnswer.svelte';
 	import SelectAnswer from './SelectAnswer.svelte';
 
 	let vocables = new Array<Vocable>();
 	let vocable: Vocable | null = null;
-	let learningType: LearningType = getLearningTypes();
+	let inputType: InputType = getInputTypes();
 
 	getAllVocables().then((x) => {
 		vocables = x;
@@ -35,11 +30,15 @@
 			.slice(0, 5);
 	}
 
+	function stopAudioIfIsPlaying() {
+		if ('speechSynthesis' in window && window.speechSynthesis.speaking) {
+			window.speechSynthesis.cancel();
+		}
+	}
+
 	function playAudio(text: string) {
 		if ('speechSynthesis' in window) {
-			if (window.speechSynthesis.speaking) {
-				window.speechSynthesis.cancel();
-			}
+			stopAudioIfIsPlaying();
 
 			const speechSynthesisUtterance = new SpeechSynthesisUtterance(text);
 			speechSynthesisUtterance.lang = getSelectedLanguage()!.code.split('-')[1];
@@ -49,12 +48,15 @@
 	}
 
 	function checkAnswer(text: string) {
-		const success = makeArray(vocable!).some((x) => x.toLocaleLowerCase() === text.toLocaleLowerCase());
-		new Audio(success ? "/success.mp3" : "/wrong.mp3").play();
+		const success = makeArray(vocable!).some(
+			(x) => x.toLocaleLowerCase() === text.toLocaleLowerCase()
+		);
+		new Audio(success ? '/success.mp3' : '/wrong.mp3').play();
 		return success;
 	}
 
 	async function handleAnswer(correct: boolean) {
+		stopAudioIfIsPlaying();
 		vocables = vocables.filter((x) => x !== vocable);
 		vocable!.level += correct ? 1 : -1;
 
@@ -62,7 +64,7 @@
 
 		const minPosition = vocables.findIndex((x) => x.level >= vocable!.level);
 		const maxPosition = vocables.findLastIndex((x) => x.level < vocable!.level) + 1;
-		const nextIndex = randomIntInRange(
+		const nextIndex = getRandomNumberInRange(
 			Math.max(minPosition, 1),
 			maxPosition === -1 ? vocables.length : maxPosition
 		);
@@ -71,13 +73,13 @@
 		vocable = vocables[0];
 	}
 
-	let currentLearningType = LearningType.None;
+	let currentInputType = InputType.None;
 	$: {
 		// Rerun when the vocable changes
 		const temp = vocable;
 
-		const learningTypes = getAllLearningTypes().filter((x) => hasFlag(learningType, x));
-		currentLearningType = learningTypes[randomIntInRange(0, learningTypes.length - 1)];
+		const inputTypes = getAllInputTypes().filter((x) => hasFlag(inputType, x));
+		currentInputType = getRandomChoice(inputTypes);
 	}
 </script>
 
@@ -88,7 +90,7 @@
 
 {#if vocable != null}
 	{#key vocable}
-		{#if currentLearningType === LearningType.SelectAnswers}
+		{#if currentInputType === InputType.SelectAnswers}
 			<SelectAnswer
 				question={vocable.lang1}
 				{checkAnswer}
@@ -97,7 +99,7 @@
 				possibleAnswers={shuffleArray([makeArray(vocable)[0], ...getSomeAnswers()])}
 				onAnswer={handleAnswer}
 			/>
-		{:else if currentLearningType === LearningType.EnterAnswers}
+		{:else if currentInputType === InputType.EnterAnswers}
 			<EnterAnswer
 				question={vocable.lang1}
 				checkAnswer={(text) => {

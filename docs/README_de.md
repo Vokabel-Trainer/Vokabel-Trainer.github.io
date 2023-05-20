@@ -16,7 +16,7 @@ Willkommen beim Vokabel-Trainer! Dies ist eine webbasierte Anwendung, die es dir
 
 ## Mitwirkende
 
-Die Vokabeln und die "Über"-Seite wurden von Chat-GPT, einer fortschrittlichen Sprach-KI, erstellt. Die README.md-Datei wurde ebenfalls von Chat-GPT generiert. Der Vokabel-Trainer selbst wurde von [Dein Name] entwickelt.
+Die Vokabeln und die "Über"-Seite wurden von Chat-GPT, einer fortschrittlichen Sprach-KI, erstellt. Die README.md-Datei wurde ebenfalls von Chat-GPT generiert. Der Vokabel-Trainer selbst wurde von Helmut Bezolt entwickelt.
 
 Wenn du zum Projekt beitragen möchtest, kannst du Forks erstellen, Pull-Requests senden oder Issues melden. Weitere Informationen dazu findest du in der [Mitwirkendenanleitung](CONTRIBUTING.md).
 

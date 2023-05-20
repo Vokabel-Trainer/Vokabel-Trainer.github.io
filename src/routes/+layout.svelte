@@ -19,6 +19,8 @@
 			<p class="font-bold">
 				Ausgewählte Sprache: {getName($languagePairStore.from)} - {getName($languagePairStore.to)}
 			</p>
+		{:else}
+			<p class="font-bold">Aktuell ist keine Sprache ausgewählt.</p>
 		{/if}
 	{:else}
 		<p class="font-bold">Ausgewählte Sprachen werden geladen.</p>

@@ -11,12 +11,6 @@
 	let correct: boolean | null = null;
 	let selectedAnswer: string | null = null;
 
-	$: {
-		correct = null;
-		// Refresh when temp changes.
-		const temp = question;
-	}
-
 	async function nextPage() {
 		if (correct == null) {
 			correct = checkAnswer(selectedAnswer!);

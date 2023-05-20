@@ -49,7 +49,9 @@
 	}
 
 	function checkAnswer(text: string) {
-		return makeArray(vocable!).some((x) => x.toLocaleLowerCase() === text.toLocaleLowerCase());
+		const success = makeArray(vocable!).some((x) => x.toLocaleLowerCase() === text.toLocaleLowerCase());
+		new Audio(success ? "/success.mp3" : "/wrong.mp3").play();
+		return success;
 	}
 
 	async function handleAnswer(correct: boolean) {

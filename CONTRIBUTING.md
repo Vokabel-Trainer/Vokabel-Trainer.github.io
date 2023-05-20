@@ -6,7 +6,7 @@ To contribute, please follow these guidelines:
 
 ## Reporting Issues
 
-If you encounter any issues or bugs while using the Vocabulary Trainer, please [open an issue](https://github.com/vocabulary-trainer/issues) on GitHub. Make sure to provide a clear and detailed description of the problem, including steps to reproduce it.
+If you encounter any issues or bugs while using the Vocabulary Trainer, please [open an issue](https://vokabel-trainer.github.io/issues) on GitHub. Make sure to provide a clear and detailed description of the problem, including steps to reproduce it.
 
 ## Making Contributions
 

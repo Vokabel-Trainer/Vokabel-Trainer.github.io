@@ -54,4 +54,8 @@
 		Starte noch heute dein Sprachabenteuer mit dem Vokabel-Trainer und erlebe, wie das Erlernen von
 		Vokabeln zu einer unterhaltsamen und lohnenden Erfahrung wird!
 	</p>
+
+	<div class="flex justify-center">
+		<a class="btn" href="/">Zur Startseite</a>
+	</div>
 </div>

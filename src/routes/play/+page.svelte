@@ -35,7 +35,7 @@
 			.slice(0, 5);
 	}
 
-	function playAudio(text: string){
+	function playAudio(text: string) {
 		if ('speechSynthesis' in window) {
 			if (window.speechSynthesis.speaking) {
 				window.speechSynthesis.cancel();
@@ -90,7 +90,7 @@
 			<SelectAnswer
 				question={vocable.lang1}
 				{checkAnswer}
-				playAudio={playAudio}
+				{playAudio}
 				correctAnswers={makeArray(vocable)}
 				possibleAnswers={shuffleArray([makeArray(vocable)[0], ...getSomeAnswers()])}
 				onAnswer={handleAnswer}
@@ -99,9 +99,13 @@
 			<EnterAnswer
 				question={vocable.lang1}
 				checkAnswer={(text) => {
-					playAudio(text);
-					return checkAnswer(text);
+					const correct = checkAnswer(text);
+					if (correct) {
+						playAudio(text);
+					}
+					return correct;
 				}}
+				{playAudio}
 				correctAnswers={makeArray(vocable)}
 				onAnswer={handleAnswer}
 			/>

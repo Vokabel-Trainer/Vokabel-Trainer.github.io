@@ -3,6 +3,7 @@
 
 	export let question: string;
 	export let correctAnswers: string[];
+	export let playAudio: (text: string) => void;
 	export let checkAnswer: (text: string) => boolean;
 	export let onAnswer: ((correct: boolean) => Promise<void>) | null = null;
 
@@ -56,9 +57,9 @@
 			/>
 		{:else}
 			Richtige Antworten:
-			<p>
-				{correctAnswers.join(', ')}
-			</p>
+			{#each correctAnswers as correctAnswer}
+				<button class="btn" on:click={() => playAudio(correctAnswer)}>{correctAnswer}</button>
+			{/each}
 		{/if}
 	{/if}
 </div>

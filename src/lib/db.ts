@@ -1,6 +1,7 @@
 import { openDB } from 'idb';
 import type { DBSchema } from 'idb/build/entry';
 import type { Category } from './languages';
+import { anyCategoriesSelectedStore } from './store';
 
 export type Vocable = {
 	lang1: string;
@@ -81,6 +82,7 @@ export async function storeFile(categories: Array<Category>, visibleCategories: 
 	}
 	transaction.commit();
 	db.close();
+	anyCategoriesSelectedStore.set(visibleCategories.length > 0);
 }
 
 export async function getSelectedCategories() {

@@ -11,9 +11,9 @@
 	<br />
 	<p>
 		Sprachkenntnisse sind heutzutage von unschätzbarem Wert, sei es für die berufliche Entwicklung,
-		das Reisen oder einfach nur zum persönlichen Wachstum. Bei dem Vokabel-Trainer konzentrieren wir
-		uns darauf, Anfängern dabei zu helfen, ihr Vokabular in Deutsch, Englisch, Russisch und Spanisch
-		effektiv aufzubauen.
+		das Reisen oder einfach nur zum persönlichen Wachstum. Bei dem Vokabel-Trainer, einem
+		Open-Source-Projekt, möchten wir Anfängern helfen, ihr Vokabular in Deutsch, Englisch, Russisch
+		und Spanisch effektiv aufzubauen.
 	</p>
 	<br />
 	<p>
@@ -28,6 +28,16 @@
 		Englisch, Russisch und Spanisch, die speziell auf den Anfangslehrplan zugeschnitten sind. Wir
 		konzentrieren uns darauf, dir grundlegende Vokabeln beizubringen, die du im Alltag verwenden
 		kannst, sei es beim Einkaufen, Reisen oder der Kommunikation mit anderen Menschen.
+	</p>
+	<br />
+	<p>
+		Unser Open-Source-Projekt wird von einer engagierten Community entwickelt und gepflegt. Wenn du
+		Fehler entdeckst oder Verbesserungsvorschläge hast, sind wir dankbar für dein Feedback! Du
+		kannst ein Issue in unserem Projekt auf GitHub unter <a
+			href="https://github.com/Vokabel-Trainer/Vokabel-Trainer.github.io"
+			class="link"
+			>https://github.com/Vokabel-Trainer/Vokabel-Trainer.github.io</a
+		> erstellen und uns bei der Weiterentwicklung unterstützen.
 	</p>
 	<br />
 	<p>

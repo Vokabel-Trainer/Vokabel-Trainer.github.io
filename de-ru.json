@@ -1,0 +1,152 @@
+[
+	{
+		"title": "Zahlen",
+		"values": {
+			"Eins": "один",
+			"Zwei": "два",
+			"Drei": "три",
+			"Vier": "четыре",
+			"Fünf": "пять",
+			"Sechs": "шесть",
+			"Sieben": "семь",
+			"Acht": "восемь",
+			"Neun": "девять",
+			"Zehn": "десять"
+		}
+	},
+	{
+		"title": "Farben",
+		"values": {
+			"Schwarz": "черный",
+			"Weiß": "белый",
+			"Rot": "красный",
+			"Blau": "синий",
+			"Gelb": "желтый",
+			"Grün": "зеленый",
+			"Braun": "коричневый",
+			"Grau": "серый",
+			"Orange": "оранжевый",
+			"Violett": "фиолетовый"
+		}
+	},
+
+	{
+		"title": "Familie",
+		"values": {
+			"Papa": "папа",
+			"Schwester": "сестра",
+			"Bruder": "брат",
+			"Tochter": "дочь",
+			"Sohn": "сын",
+			"Eltern": "родители",
+			"Oma": "бабушка",
+			"Opa": "дедушка",
+			"Kind": "ребенок"
+		}
+	},
+	{
+		"title": "Tiere",
+		"values": {
+			"Katze": "кошка",
+			"Hund": "собака",
+			"Vogel": "птица",
+			"Pferd": "лошадь",
+			"Hase": "кролик",
+			"Kaninchen": "заяц",
+			"Ziege": "коза",
+			"Kuh": "корова",
+			"Schwein": "свинья",
+			"Fisch": "рыба"
+		}
+	},
+	{
+		"title": "Essen",
+		"values": {
+			"Apfel": "яблоко",
+			"Brot": "хлеб",
+			"Milch": "молоко",
+			"Fleisch": "мясо",
+			"Gemüse": "овощи",
+			"Früchte": "фрукты",
+			"Reis": "рис",
+			"Ei": "яйцо",
+			"Zucker": "сахар",
+			"Salz": "соль"
+		}
+	},
+	{
+		"title": "Kleidung",
+		"values": {
+			"Mütze": "шапка",
+			"Schal": "шарф",
+			"Mantel": "пальто",
+			"Hose": "брюки",
+			"Kleid": "платье",
+			"Hemd": "рубашка",
+			"Rock": "юбка",
+			"Socken": "носки",
+			"Schuhe": "обувь",
+			"Handschuhe": "перчатки"
+		}
+	},
+	{
+		"title": "Körper",
+		"values": {
+			"Kopf": "голова",
+			"Augen": "глаза",
+			"Ohren": "уши",
+			"Nase": "нос",
+			"Mund": "рот",
+			"Zähne": "зубы",
+			"Haare": "волосы",
+			"Hände": "руки",
+			"Beine": "ноги",
+			"Herz": "сердце"
+		}
+	},
+	{
+		"title": "Verben",
+		"values": {
+			"gehen": "идти",
+			"sprechen": "говорить",
+			"sehen": "видеть",
+			"hören": "слушать",
+			"essen": "есть",
+			"trinken": "пить",
+			"schlafen": "спать",
+			"arbeiten": "работать",
+			"lernen": "учиться",
+			"spielen": "играть"
+		}
+	},
+	{
+		"title": "Länder",
+		"values": {
+			"Russland": "Россия",
+			"Deutschland": "Германия",
+			"Frankreich": "Франция",
+			"Italien": "Италия",
+			"USA": "США",
+			"Großbritannien": "Великобритания",
+			"Spanien": "Испания",
+			"Kanada": "Канада",
+			"Australien": "Австралия",
+			"Japan": "Япония"
+		}
+	},
+	{
+		"title": "Begrüßung",
+		"values": {
+			"Hallo": "привет",
+			"Tschüss": "пока",
+			"Danke": "спасибо",
+			"Entschuldigung": "извините",
+			"Bitte": "пожалуйста",
+			"Wie geht es?": "как дела?",
+			"gut": "хорошо",
+			"verstehen": "понимать",
+			"bereit": "готов",
+			"Auf Wiedersehen": "до свидания"
+		}
+	}
+]

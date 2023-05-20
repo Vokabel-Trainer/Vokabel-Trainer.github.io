@@ -1,0 +1,1 @@
+function u(n){for(let t=n.length-1;t>0;t--){const o=Math.floor(Math.random()*(t+1));[n[t],n[o]]=[n[o],n[t]]}return n}function e(n,t){return Math.floor(Math.random()*(t-n+1)+n)}function r(n){return n[e(0,n.length-1)]}function a(n,t){return(n&t)!==0}function f(n,t){return n&~t}function h(n,t){return n|t}export{e as a,h as b,r as g,a as h,f as r,u as s};

@@ -1,0 +1,152 @@
+[
+	{
+		"title": "Zahlen",
+		"values": {
+			"Eins": "Uno",
+			"Zwei": "Dos",
+			"Drei": "Tres",
+			"Vier": "Cuatro",
+			"Fünf": "Cinco",
+			"Sechs": "Seis",
+			"Sieben": "Siete",
+			"Acht": "Ocho",
+			"Neun": "Nueve",
+			"Zehn": "Diez"
+		}
+	},
+	{
+		"title": "Farben",
+		"values": {
+			"Rot": "Rojo",
+			"Blau": "Azul",
+			"Grün": "Verde",
+			"Gelb": "Amarillo",
+			"Orange": "Naranja",
+			"Lila": "Morado",
+			"Schwarz": "Negro",
+			"Weiß": "Blanco",
+			"Braun": "Marrón",
+			"Pink": "Rosa"
+		}
+	},
+	{
+		"title": "Familie",
+		"values": {
+			"Mutter": "Madre",
+			"Vater": "Padre",
+			"Bruder": "Hermano",
+			"Schwester": "Hermana",
+			"Sohn": "Hijo",
+			"Tochter": "Hija",
+			"Großmutter": "Abuela",
+			"Großvater": "Abuelo",
+			"Tante": "Tía",
+			"Onkel": "Tío"
+		}
+	},
+	{
+		"title": "Essen",
+		"values": {
+			"Apfel": "Manzana",
+			"Banane": "Plátano",
+			"Orange": "Naranja",
+			"Brot": "Pan",
+			"Käse": "Queso",
+			"Milch": "Leche",
+			"Ei": "Huevo",
+			"Huhn": "Pollo",
+			"Reis": "Arroz",
+			"Tomate": "Tomate"
+		}
+	},
+	{
+		"title": "Tiere",
+		"values": {
+			"Katze": "Gato",
+			"Hund": "Perro",
+			"Elefant": "Elefante",
+			"Löwe": "León",
+			"Tiger": "Tigre",
+			"Giraffe": "Jirafa",
+			"Affe": "Mono",
+			"Pferd": "Caballo",
+			"Kuh": "Vaca",
+			"Schaf": "Oveja"
+		}
+	},
+	{
+		"title": "Körper",
+		"values": {
+			"Kopf": "Cabeza",
+			"Auge": "Ojo",
+			"Ohr": "Oreja",
+			"Nase": "Nariz",
+			"Mund": "Boca",
+			"Hand": "Mano",
+			"Bein": "Pierna",
+			"Fuß": "Pie",
+			"Herz": "Corazón",
+			"Bauch": "Estómago"
+		}
+	},
+	{
+		"title": "Kleidung",
+		"values": {
+			"Hemd": "Camisa",
+			"Hose": "Pantalones",
+			"Kleid": "Vestido",
+			"Schuhe": "Zapatos",
+			"Hut": "Sombrero",
+			"Jacke": "Chaqueta",
+			"Socken": "Calcetines",
+			"Handschuhe": "Guantes",
+			"Rock": "Falda",
+			"Pullover": "Suéter"
+		}
+	},
+	{
+		"title": "Schule",
+		"values": {
+			"Lehrer": "Profesor",
+			"Schüler": "Estudiante",
+			"Buch": "Libro",
+			"Kugelschreiber": "Bolígrafo",
+			"Bleistift": "Lápiz",
+			"Schreibtisch": "Escritorio",
+			"Stuhl": "Silla",
+			"Schule": "Escuela",
+			"Klassenzimmer": "Aula",
+			"Hausaufgaben": "Tarea"
+		}
+	},
+	{
+		"title": "Länder",
+		"values": {
+			"Spanien": "España",
+			"Deutschland": "Alemania",
+			"Vereinigte Staaten": "Estados Unidos",
+			"Frankreich": "Francia",
+			"Italien": "Italia",
+			"Vereinigtes Königreich": "Reino Unido",
+			"Kanada": "Canadá",
+			"Australien": "Australia",
+			"China": "China",
+			"Japan": "Japón"
+		}
+	},
+	{
+		"title": "Transport",
+		"values": {
+			"Auto": "Coche",
+			"Fahrrad": "Bicicleta",
+			"Bus": "Autobús",
+			"Zug": "Tren",
+			"Flugzeug": "Avión",
+			"Boot": "Barco",
+			"Motorrad": "Motocicleta",
+			"Taxi": "Taxi",
+			"U-Bahn": "Metro",
+			"Gehen": "Caminar"
+		}
+	}
+]

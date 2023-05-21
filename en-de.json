@@ -1,0 +1,152 @@
+[
+	{
+		"title": "Numbers",
+		"values": {
+			"One": "Eins",
+			"Two": "Zwei",
+			"Three": "Drei",
+			"Four": "Vier",
+			"Five": "Fünf",
+			"Six": "Sechs",
+			"Seven": "Sieben",
+			"Eight": "Acht",
+			"Nine": "Neun",
+			"Ten": "Zehn"
+		}
+	},
+	{
+		"title": "Colors",
+		"values": {
+			"Red": "Rot",
+			"Blue": "Blau",
+			"Green": "Grün",
+			"Yellow": "Gelb",
+			"Orange": "Orange",
+			"Purple": "Violett",
+			"Black": "Schwarz",
+			"White": "Weiß",
+			"Brown": "Braun",
+			"Pink": "Pink"
+		}
+	},
+	{
+		"title": "Family",
+		"values": {
+			"Mother": "Mutter",
+			"Father": "Vater",
+			"Brother": "Bruder",
+			"Sister": "Schwester",
+			"Son": "Sohn",
+			"Daughter": "Tochter",
+			"Grandmother": "Großmutter",
+			"Grandfather": "Großvater",
+			"Aunt": "Tante",
+			"Uncle": "Onkel"
+		}
+	},
+	{
+		"title": "Food",
+		"values": {
+			"Apple": "Apfel",
+			"Banana": "Banane",
+			"Orange": "Orange",
+			"Bread": "Brot",
+			"Cheese": "Käse",
+			"Milk": "Milch",
+			"Egg": "Ei",
+			"Chicken": "Hähnchen",
+			"Rice": "Reis",
+			"Tomato": "Tomate"
+		}
+	},
+	{
+		"title": "Animals",
+		"values": {
+			"Cat": "Katze",
+			"Dog": "Hund",
+			"Elephant": "Elefant",
+			"Lion": "Löwe",
+			"Tiger": "Tiger",
+			"Giraffe": "Giraffe",
+			"Monkey": "Affe",
+			"Horse": "Pferd",
+			"Cow": "Kuh",
+			"Sheep": "Schaf"
+		}
+	},
+	{
+		"title": "Body",
+		"values": {
+			"Head": "Kopf",
+			"Eye": "Auge",
+			"Ear": "Ohr",
+			"Nose": "Nase",
+			"Mouth": "Mund",
+			"Hand": "Hand",
+			"Leg": "Bein",
+			"Foot": "Fuß",
+			"Heart": "Herz",
+			"Stomach": "Bauch"
+		}
+	},
+	{
+		"title": "Clothing",
+		"values": {
+			"Shirt": "Hemd",
+			"Pants": "Hose",
+			"Dress": "Kleid",
+			"Shoes": "Schuhe",
+			"Hat": "Mütze",
+			"Jacket": "Jacke",
+			"Socks": "Socken",
+			"Gloves": "Handschuhe",
+			"Skirt": "Rock",
+			"Sweater": "Pullover"
+		}
+	},
+	{
+		"title": "School",
+		"values": {
+			"Teacher": "Lehrer",
+			"Student": "Schüler",
+			"Book": "Buch",
+			"Pen": "Stift",
+			"Pencil": "Bleistift",
+			"Desk": "Tisch",
+			"Chair": "Stuhl",
+			"School": "Schule",
+			"Classroom": "Klasse",
+			"Homework": "Hausaufgaben"
+		}
+	},
+	{
+		"title": "Countries",
+		"values": {
+			"Germany": "Deutschland",
+			"France": "Frankreich",
+			"Spain": "Spanien",
+			"Italy": "Italien",
+			"Great Britain": "Großbritannien",
+			"Canada": "Kanada",
+			"Australia": "Australien",
+			"Russia": "Russland",
+			"China": "China",
+			"Japan": "Japan"
+		}
+	},
+	{
+		"title": "Transportation",
+		"values": {
+			"Car": "Auto",
+			"Bicycle": "Fahrrad",
+			"Bus": "Bus",
+			"Train": "Zug",
+			"Airplane": "Flugzeug",
+			"Boat": "Boot",
+			"Motorcycle": "Motorrad",
+			"Taxi": "Taxi",
+			"Subway": "U-Bahn",
+			"Walking": "Laufen"
+		}
+	}
+]

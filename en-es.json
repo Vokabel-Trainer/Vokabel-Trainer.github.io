@@ -1,0 +1,152 @@
+[
+	{
+		"title": "Numbers",
+		"values": {
+			"One": "Uno",
+			"Two": "Dos",
+			"Three": "Tres",
+			"Four": "Cuatro",
+			"Five": "Cinco",
+			"Six": "Seis",
+			"Seven": "Siete",
+			"Eight": "Ocho",
+			"Nine": "Nueve",
+			"Ten": "Diez"
+		}
+	},
+	{
+		"title": "Colors",
+		"values": {
+			"Red": "Rojo",
+			"Blue": "Azul",
+			"Green": "Verde",
+			"Yellow": "Amarillo",
+			"Orange": "Naranja",
+			"Purple": "Violeta",
+			"Black": "Negro",
+			"White": "Blanco",
+			"Brown": "Marrón",
+			"Pink": "Rosa"
+		}
+	},
+	{
+		"title": "Family",
+		"values": {
+			"Mother": "Madre",
+			"Father": "Padre",
+			"Brother": "Hermano",
+			"Sister": "Hermana",
+			"Son": "Hijo",
+			"Daughter": "Hija",
+			"Grandmother": "Abuela",
+			"Grandfather": "Abuelo",
+			"Aunt": "Tía",
+			"Uncle": "Tío"
+		}
+	},
+	{
+		"title": "Food",
+		"values": {
+			"Apple": "Manzana",
+			"Banana": "Plátano",
+			"Orange": "Naranja",
+			"Bread": "Pan",
+			"Cheese": "Queso",
+			"Milk": "Leche",
+			"Egg": "Huevo",
+			"Chicken": "Pollo",
+			"Rice": "Arroz",
+			"Tomato": "Tomate"
+		}
+	},
+	{
+		"title": "Animals",
+		"values": {
+			"Cat": "Gato",
+			"Dog": "Perro",
+			"Elephant": "Elefante",
+			"Lion": "León",
+			"Tiger": "Tigre",
+			"Giraffe": "Jirafa",
+			"Monkey": "Mono",
+			"Horse": "Caballo",
+			"Cow": "Vaca",
+			"Sheep": "Oveja"
+		}
+	},
+	{
+		"title": "Body",
+		"values": {
+			"Head": "Cabeza",
+			"Eye": "Ojo",
+			"Ear": "Oreja",
+			"Nose": "Nariz",
+			"Mouth": "Boca",
+			"Hand": "Mano",
+			"Leg": "Pierna",
+			"Foot": "Pie",
+			"Heart": "Corazón",
+			"Stomach": "Estómago"
+		}
+	},
+	{
+		"title": "Clothing",
+		"values": {
+			"Shirt": "Camisa",
+			"Pants": "Pantalón",
+			"Dress": "Vestido",
+			"Shoes": "Zapatos",
+			"Hat": "Sombrero",
+			"Jacket": "Chaqueta",
+			"Socks": "Calcetines",
+			"Gloves": "Guantes",
+			"Skirt": "Falda",
+			"Sweater": "Suéter"
+		}
+	},
+	{
+		"title": "School",
+		"values": {
+			"Teacher": "Maestro",
+			"Student": "Estudiante",
+			"Book": "Libro",
+			"Pen": "Pluma",
+			"Pencil": "Lápiz",
+			"Desk": "Escritorio",
+			"Chair": "Silla",
+			"School": "Escuela",
+			"Classroom": "Salón de clases",
+			"Homework": "Tarea"
+		}
+	},
+	{
+		"title": "Countries",
+		"values": {
+			"Spain": "España",
+			"Mexico": "México",
+			"Argentina": "Argentina",
+			"United States": "Estados Unidos",
+			"France": "Francia",
+			"Italy": "Italia",
+			"Germany": "Alemania",
+			"Canada": "Canadá",
+			"Brazil": "Brasil",
+			"Japan": "Japón"
+		}
+	},
+	{
+		"title": "Transportation",
+		"values": {
+			"Car": "Coche",
+			"Bicycle": "Bicicleta",
+			"Bus": "Autobús",
+			"Train": "Tren",
+			"Airplane": "Avión",
+			"Boat": "Barco",
+			"Motorcycle": "Motocicleta",
+			"Taxi": "Taxi",
+			"Subway": "Metro",
+			"Walking": "Caminar"
+		}
+	}
+]

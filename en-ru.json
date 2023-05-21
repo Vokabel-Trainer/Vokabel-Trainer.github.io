@@ -1,0 +1,152 @@
+[
+	{
+		"title": "Numbers",
+		"values": {
+			"One": "Один",
+			"Two": "Два",
+			"Three": "Три",
+			"Four": "Четыре",
+			"Five": "Пять",
+			"Six": "Шесть",
+			"Seven": "Семь",
+			"Eight": "Восемь",
+			"Nine": "Девять",
+			"Ten": "Десять"
+		}
+	},
+	{
+		"title": "Colors",
+		"values": {
+			"Red": "Красный",
+			"Blue": "Синий",
+			"Green": "Зеленый",
+			"Yellow": "Желтый",
+			"Orange": "Оранжевый",
+			"Purple": "Фиолетовый",
+			"Black": "Черный",
+			"White": "Белый",
+			"Brown": "Коричневый",
+			"Pink": "Розовый"
+		}
+	},
+	{
+		"title": "Family",
+		"values": {
+			"Mother": "Мать",
+			"Father": "Отец",
+			"Brother": "Брат",
+			"Sister": "Сестра",
+			"Son": "Сын",
+			"Daughter": "Дочь",
+			"Grandmother": "Бабушка",
+			"Grandfather": "Дедушка",
+			"Aunt": "Тётя",
+			"Uncle": "Дядя"
+		}
+	},
+	{
+		"title": "Food",
+		"values": {
+			"Apple": "Яблоко",
+			"Banana": "Банан",
+			"Orange": "Апельсин",
+			"Bread": "Хлеб",
+			"Cheese": "Сыр",
+			"Milk": "Молоко",
+			"Egg": "Яйцо",
+			"Chicken": "Курица",
+			"Rice": "Рис",
+			"Tomato": "Помидор"
+		}
+	},
+	{
+		"title": "Animals",
+		"values": {
+			"Cat": "Кот",
+			"Dog": "Собака",
+			"Elephant": "Слон",
+			"Lion": "Лев",
+			"Tiger": "Тигр",
+			"Giraffe": "Жираф",
+			"Monkey": "Обезьяна",
+			"Horse": "Лошадь",
+			"Cow": "Корова",
+			"Sheep": "Овца"
+		}
+	},
+	{
+		"title": "Body",
+		"values": {
+			"Head": "Голова",
+			"Eye": "Глаз",
+			"Ear": "Ухо",
+			"Nose": "Нос",
+			"Mouth": "Рот",
+			"Hand": "Рука",
+			"Leg": "Нога",
+			"Foot": "Ступня",
+			"Heart": "Сердце",
+			"Stomach": "Живот"
+		}
+	},
+	{
+		"title": "Clothing",
+		"values": {
+			"Shirt": "Рубашка",
+			"Pants": "Штаны",
+			"Dress": "Платье",
+			"Shoes": "Обувь",
+			"Hat": "Шапка",
+			"Jacket": "Куртка",
+			"Socks": "Носки",
+			"Gloves": "Перчатки",
+			"Skirt": "Юбка",
+			"Sweater": "Свитер"
+		}
+	},
+	{
+		"title": "School",
+		"values": {
+			"Teacher": "Учитель",
+			"Student": "Ученик",
+			"Book": "Книга",
+			"Pen": "Ручка",
+			"Pencil": "Карандаш",
+			"Desk": "Парта",
+			"Chair": "Стул",
+			"School": "Школа",
+			"Classroom": "Класс",
+			"Homework": "Домашнее задание"
+		}
+	},
+	{
+		"title": "Countries",
+		"values": {
+			"Russia": "Россия",
+			"Germany": "Германия",
+			"United States": "Соединенные Штаты",
+			"France": "Франция",
+			"Italy": "Италия",
+			"United Kingdom": "Великобритания",
+			"Canada": "Канада",
+			"Australia": "Австралия",
+			"China": "Китай",
+			"Japan": "Япония"
+		}
+	},
+	{
+		"title": "Transportation",
+		"values": {
+			"Car": "Машина",
+			"Bicycle": "Велосипед",
+			"Bus": "Автобус",
+			"Train": "Поезд",
+			"Airplane": "Самолет",
+			"Boat": "Лодка",
+			"Motorcycle": "Мотоцикл",
+			"Taxi": "Такси",
+			"Subway": "Метро",
+			"Walk": "Ходить пешком"
+		}
+	}
+]

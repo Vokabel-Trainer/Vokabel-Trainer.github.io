@@ -2,10 +2,20 @@
 	import { browser } from '$app/environment';
 	import { page } from '$app/stores';
 	import { anyCategoriesSelected } from '$lib/db';
-	import { getName, getSelectedLanguage } from '$lib/languages';
+	import { getName, getSelectedApplicationLanguage, getSelectedLanguage } from '$lib/languages';
 	import { getTranslation } from '$lib/locales/translation';
-	import { anyCategoriesSelectedStore, languagePairStore } from '$lib/store';
+	import {
+		anyCategoriesSelectedStore,
+		applicationLanguageStore,
+		languagePairStore
+	} from '$lib/store';
 	import '../app.css';
+
+	$: {
+		if (browser) {
+			applicationLanguageStore.set(getSelectedApplicationLanguage());
+		}
+	}
 
 	$: {
 		if (browser) {
@@ -26,23 +36,23 @@
 		{#if browser}
 			{#if $languagePairStore}
 				<p class="font-bold flex-1">
-					{getTranslation('selectedLanguage')
-						.replace('{from}', getTranslation(getName($languagePairStore.from)))
-						.replace('{to}', getTranslation(getName($languagePairStore.to)))}
+					{getTranslation('selectedLanguage', $applicationLanguageStore)
+						.replace('{from}', getTranslation(getName($languagePairStore.from), $applicationLanguageStore))
+						.replace('{to}', getTranslation(getName($languagePairStore.to), $applicationLanguageStore))}
 				</p>
 				<button
 					class={`btn btn-sm btn-circle ${showBackButton ? '' : 'hidden'}`}
 					on:click={handleBackClick}>X</button
 				>
 			{:else}
-				<p class="font-bold flex-1">{getTranslation('noLanguageSelected')}</p>
+				<p class="font-bold flex-1">{getTranslation('noLanguageSelected', $applicationLanguageStore)}</p>
 				<button
 					class={`btn btn-sm btn-circle ${showBackButton ? '' : 'hidden'}`}
 					on:click={handleBackClick}>X</button
 				>
 			{/if}
 		{:else}
-			<p class="font-bold">{getTranslation('loadSelectedLanguage')}</p>
+			<p class="font-bold">{getTranslation('loadSelectedLanguage', $applicationLanguageStore)}</p>
 		{/if}
 	</div>
 	<slot />

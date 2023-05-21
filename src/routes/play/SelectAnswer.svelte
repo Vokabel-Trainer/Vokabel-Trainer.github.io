@@ -4,6 +4,7 @@
 	import { confetti } from '@neoconfetti/svelte';
 	import Question from './Question.svelte';
 	import { getTranslation } from '$lib/locales/translation';
+	import { applicationLanguageStore } from '$lib/store';
 
 	export let question: string;
 	export let playAudio: (text: string) => void;
@@ -67,7 +68,7 @@
 	<button
 		class={`btn mt-2 w-64 ${correct == null ? '' : correct ? 'btn-success' : 'btn-error'}`}
 		on:click={nextPage}
-		disabled={selectedAnswer == null}>{getTranslation('next')}</button
+		disabled={selectedAnswer == null}>{getTranslation('next', $applicationLanguageStore)}</button
 	>
 
 	{#if correct != null}
@@ -86,7 +87,7 @@
 		{/if}
 
 		{#if currentOutputType === OutputType.Audio}
-			{getTranslation('translation')} {question}
+			{getTranslation('translation', $applicationLanguageStore)} {question}
 		{/if}
 	{/if}
 </div>

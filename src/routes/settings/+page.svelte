@@ -9,11 +9,11 @@
 		getSelectedApplicationLanguage,
 		setInputTypes,
 		setOutputTypes,
-		setSelectLanguage,
 		setSelectedApplicationLanguage
 	} from '$lib/languages';
 	import { getTranslation } from '$lib/locales/translation';
 	import { addFlag, hasFlag, removeFlag } from '$lib/methods';
+	import { applicationLanguageStore } from '$lib/store';
 
 	let inputTypes = InputType.None;
 	let outputTypes = OutputType.None;
@@ -51,18 +51,18 @@
 </script>
 
 <svelte:head>
-	<title>{getTranslation('settings')}</title>
+	<title>{getTranslation('settings', $applicationLanguageStore)}</title>
 	<meta name="description" content="Einstellungen zum Lernen der Vokabeln." />
 </svelte:head>
 
 <div class="flex flex-row w-full justify-center flex-wrap overflow-auto gap-1">
 	<div class="card w-64 bg-base-100 shadow-xl">
 		<div class="card-body">
-			<div class="card-title">{getTranslation('typeofOutput')}</div>
+			<div class="card-title">{getTranslation('typeofOutput', $applicationLanguageStore)}</div>
 
 			<div class="flex flex-col">
 				<div class="flex">
-					<p>{getTranslation('text')}</p>
+					<p>{getTranslation('text', $applicationLanguageStore)}</p>
 					<input
 						type="checkbox"
 						checked={hasFlag(outputTypes, OutputType.Text)}
@@ -71,7 +71,7 @@
 				</div>
 
 				<div class="flex">
-					<p>{getTranslation('audio')}</p>
+					<p>{getTranslation('audio', $applicationLanguageStore)}</p>
 					<input
 						type="checkbox"
 						checked={hasFlag(outputTypes, OutputType.Audio)}
@@ -82,11 +82,11 @@
 		</div>
 
 		<div class="card-body">
-			<div class="card-title">{getTranslation('typeofInput')}</div>
+			<div class="card-title">{getTranslation('typeofInput', $applicationLanguageStore)}</div>
 
 			<div class="flex flex-col">
 				<div class="flex">
-					<p>{getTranslation('selectAnswers')}</p>
+					<p>{getTranslation('selectAnswers', $applicationLanguageStore)}</p>
 					<input
 						type="checkbox"
 						checked={hasFlag(inputTypes, InputType.SelectAnswers)}
@@ -95,7 +95,7 @@
 				</div>
 
 				<div class="flex">
-					<p>{getTranslation('enterAnswers')}</p>
+					<p>{getTranslation('enterAnswers', $applicationLanguageStore)}</p>
 					<input
 						type="checkbox"
 						checked={hasFlag(inputTypes, InputType.EnterAnswers)}
@@ -106,19 +106,19 @@
 		</div>
 
 		<div class="card-body">
-			<div class="card-title">{getTranslation('language')}</div>
+			<div class="card-title">{getTranslation('language', $applicationLanguageStore)}</div>
 
 			<div class="flex flex-col">
 				<div class="flex items-center">
-					<p>{getTranslation('language')}</p>
+					<p>{getTranslation('language', $applicationLanguageStore)}</p>
 
 					<select
 						class="select"
 						bind:value={selectedLanguage}
 						on:change={() => handleLanguageChange()}
 					>
-						<option value={Language.English}>{getTranslation('english')}</option>
-						<option value={Language.German}>{getTranslation('german')}</option>
+						<option value={Language.English}>{getTranslation('english', $applicationLanguageStore)}</option>
+						<option value={Language.German}>{getTranslation('german', $applicationLanguageStore)}</option>
 					</select>
 				</div>
 			</div>

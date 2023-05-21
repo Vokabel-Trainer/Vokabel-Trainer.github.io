@@ -3,6 +3,7 @@
 	import { getAllInputTypes, getInputTypes, getSelectedLanguage, InputType } from '$lib/languages';
 	import { getTranslation } from '$lib/locales/translation';
 	import { getRandomChoice, getRandomNumberInRange, hasFlag, shuffleArray } from '$lib/methods';
+	import { applicationLanguageStore } from '$lib/store';
 	import EnterAnswer from './EnterAnswer.svelte';
 	import SelectAnswer from './SelectAnswer.svelte';
 
@@ -85,7 +86,7 @@
 </script>
 
 <svelte:head>
-	<title>{getTranslation("learnVocables")}</title>
+	<title>{getTranslation('learnVocables', $applicationLanguageStore)}</title>
 	<meta name="description" content="Vokabeln lernen." />
 </svelte:head>
 

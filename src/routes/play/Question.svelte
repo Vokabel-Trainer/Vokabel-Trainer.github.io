@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { OutputType } from '$lib/languages';
 	import { getTranslation } from '$lib/locales/translation';
+	import { applicationLanguageStore } from '$lib/store';
 
 	export let answer: string;
 	export let question: string;
@@ -22,5 +23,5 @@
 {#if outputType === OutputType.Text}
 	<p class="text-center mb-1 font-bold">{question}</p>
 {:else if outputType === OutputType.Audio}
-	<button class="btn mb-1" on:click={playAnswer}>{getTranslation("replayAudio")}</button>
+	<button class="btn mb-1" on:click={playAnswer}>{getTranslation("replayAudio", $applicationLanguageStore)}</button>
 {/if}

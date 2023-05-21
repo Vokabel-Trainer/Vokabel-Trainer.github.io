@@ -10,6 +10,7 @@
 	import { confetti } from '@neoconfetti/svelte';
 	import Question from './Question.svelte';
 	import { getTranslation } from '$lib/locales/translation';
+	import { applicationLanguageStore } from '$lib/store';
 
 	export let question: string;
 	export let correctAnswers: string[];
@@ -43,7 +44,10 @@
 
 	<form class="flex flex-col items-center" on:submit={nextClick}>
 		<p class="mb-1">
-			{getTranslation('enterWordInLang').replace('{lang}', getTranslation(langName))}
+			{getTranslation('enterWordInLang', $applicationLanguageStore).replace(
+				'{lang}',
+				getTranslation(langName, $applicationLanguageStore)
+			)}
 		</p>
 
 		<div class="flex flex-row w-full justify-center flex-wrap gap-1">
@@ -54,7 +58,7 @@
 		<button
 			type="submit"
 			class={`btn mt-2 w-64 ${correct == null ? '' : correct ? 'btn-success' : 'btn-error'}`}
-			>{getTranslation('next')}</button
+			>{getTranslation('next', $applicationLanguageStore)}</button
 		>
 	</form>
 
@@ -72,7 +76,7 @@
 				}}
 			/>
 		{:else}
-			{getTranslation('correctAnswers')}
+			{getTranslation('correctAnswers', $applicationLanguageStore)}
 			{#if currentOutputType === OutputType.Audio}
 				<p>
 					{correctAnswers.join(', ')}
@@ -85,7 +89,7 @@
 		{/if}
 
 		{#if currentOutputType === OutputType.Audio}
-			{getTranslation('translation')} {question}
+			{getTranslation('translation', $applicationLanguageStore)} {question}
 		{/if}
 	{/if}
 </div>

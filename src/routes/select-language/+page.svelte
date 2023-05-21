@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { getTranslation } from '$lib/locales/translation';
+	import { applicationLanguageStore } from '$lib/store';
 	import {
 		getLanguages,
 		getName,
@@ -17,7 +18,7 @@
 </script>
 
 <svelte:head>
-	<title>{getTranslation('selectLanguage')}</title>
+	<title>{getTranslation('selectLanguage', $applicationLanguageStore)}</title>
 	<meta name="description" content="Wählen Sie die Sprache für die Vokabeln aus." />
 </svelte:head>
 
@@ -26,16 +27,19 @@
 		<div class="card w-96 bg-base-100 shadow-xl">
 			<div class="card-body">
 				<div class="card-title">
-					{getTranslation(getName(language.from))} - {getTranslation(getName(language.to))}
+					{getTranslation(getName(language.from), $applicationLanguageStore)} - {getTranslation(
+						getName(language.to),
+						$applicationLanguageStore
+					)}
 				</div>
 				<p>
-					{getTranslation('learnVocablesFromTo')
-						.replace('{from}', getTranslation(getName(language.from)))
-						.replace('{to}', getTranslation(getName(language.to)))}
+					{getTranslation('learnVocablesFromTo', $applicationLanguageStore)
+						.replace('{from}', getTranslation(getName(language.from), $applicationLanguageStore))
+						.replace('{to}', getTranslation(getName(language.to), $applicationLanguageStore))}
 				</p>
 				<div class="card-actions justify-end">
 					<button class="btn btn-primary" on:click={() => selectLanguage(language)}
-						>{getTranslation('select')}</button
+						>{getTranslation('select', $applicationLanguageStore)}</button
 					>
 				</div>
 			</div>

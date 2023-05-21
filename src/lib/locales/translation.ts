@@ -1,3 +1,4 @@
+import { Language } from '$lib/languages';
 import de from './de.json';
 import en from './en.json';
 
@@ -46,6 +47,9 @@ type Translation = {
 	selectedLanguage: string;
 };
 
-export function getTranslation(key: keyof Translation): string {
+export function getTranslation(key: keyof Translation, language: Language | null): string {
+	if (language === Language.German) {
+		return de[key];
+	}
 	return en[key];
 }

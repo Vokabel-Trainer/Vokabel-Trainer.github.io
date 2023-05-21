@@ -142,11 +142,11 @@ export function getOutputTypes() {
 }
 
 export function setSelectedApplicationLanguage(language: Language) {
-	localStorage.setItem('language', JSON.stringify(language));
+	localStorage.setItem('applicationLanguage', JSON.stringify(language));
 }
 
 export function getSelectedApplicationLanguage() {
-	const language = localStorage.getItem('language');
+	const language = localStorage.getItem('applicationLanguage');
 	if (!language) {
 		if (navigator.language.toLocaleLowerCase().includes('de')) {
 			return Language.German;

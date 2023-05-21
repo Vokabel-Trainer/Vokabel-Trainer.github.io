@@ -1,58 +1,58 @@
-const e = /* @__PURE__ */ location.pathname.split("/").slice(0, -1).join("/"), l = [
-  e + "/_app/immutable/entry/app.faf77f04.js",
-  e + "/_app/immutable/assets/0.dab6b812.css",
-  e + "/_app/immutable/nodes/0.e9f774a7.js",
-  e + "/_app/immutable/nodes/1.31f0818e.js",
-  e + "/_app/immutable/nodes/2.6c330930.js",
-  e + "/_app/immutable/nodes/3.4da40cba.js",
-  e + "/_app/immutable/nodes/4.8e6d2139.js",
-  e + "/_app/immutable/nodes/5.6aeccbf3.js",
-  e + "/_app/immutable/nodes/6.526fe8a5.js",
-  e + "/_app/immutable/nodes/7.2de98005.js",
-  e + "/_app/immutable/chunks/db.c2c3de62.js",
-  e + "/_app/immutable/chunks/index.9d9b8d81.js",
-  e + "/_app/immutable/chunks/index.fd817f55.js",
-  e + "/_app/immutable/chunks/languages.f5cb97a8.js",
-  e + "/_app/immutable/chunks/methods.63081a9d.js",
-  e + "/_app/immutable/chunks/navigation.0213a5d7.js",
-  e + "/_app/immutable/chunks/singletons.6eb725e9.js",
-  e + "/_app/immutable/chunks/store.47891479.js",
-  e + "/_app/immutable/chunks/stores.48ea8832.js",
-  e + "/_app/immutable/entry/start.15fadf13.js"
-], u = [
-  e + "/android-chrome-192x192.png",
-  e + "/android-chrome-512x512.png",
-  e + "/apple-touch-icon.png",
-  e + "/browserconfig.xml",
-  e + "/de-en.json",
-  e + "/de-es.json",
-  e + "/de-ru.json",
-  e + "/en-de.json",
-  e + "/en-es.json",
-  e + "/en-ru.json",
-  e + "/favicon-16x16.png",
-  e + "/favicon-32x32.png",
-  e + "/favicon.ico",
-  e + "/favicon.png",
-  e + "/mstile-150x150.png",
-  e + "/robots.txt",
-  e + "/ru-de.json",
-  e + "/ru-en.json",
-  e + "/ru-es.json",
-  e + "/safari-pinned-tab.svg",
-  e + "/site.webmanifest",
-  e + "/success.mp3",
-  e + "/wrong.mp3"
-], i = "1684667092253", n = self, p = `cache${i}`, m = l.concat(u), d = new Set(m);
-n.addEventListener("install", (s) => {
-  s.waitUntil(
+const s = /* @__PURE__ */ location.pathname.split("/").slice(0, -1).join("/"), d = [
+  s + "/_app/immutable/entry/app.7b5129f5.js",
+  s + "/_app/immutable/assets/0.dab6b812.css",
+  s + "/_app/immutable/nodes/0.22d54860.js",
+  s + "/_app/immutable/nodes/1.2bceeba3.js",
+  s + "/_app/immutable/nodes/2.6c330930.js",
+  s + "/_app/immutable/nodes/3.4da40cba.js",
+  s + "/_app/immutable/nodes/4.8e6d2139.js",
+  s + "/_app/immutable/nodes/5.7bd60656.js",
+  s + "/_app/immutable/nodes/6.9701d075.js",
+  s + "/_app/immutable/nodes/7.2de98005.js",
+  s + "/_app/immutable/chunks/db.c2c3de62.js",
+  s + "/_app/immutable/chunks/index.9d9b8d81.js",
+  s + "/_app/immutable/chunks/index.fd817f55.js",
+  s + "/_app/immutable/chunks/languages.f5cb97a8.js",
+  s + "/_app/immutable/chunks/methods.63081a9d.js",
+  s + "/_app/immutable/chunks/navigation.dc4c677f.js",
+  s + "/_app/immutable/chunks/singletons.896bfac2.js",
+  s + "/_app/immutable/chunks/store.47891479.js",
+  s + "/_app/immutable/chunks/stores.ab86a3f4.js",
+  s + "/_app/immutable/entry/start.1ba7c8d9.js"
+], l = [
+  s + "/android-chrome-192x192.png",
+  s + "/android-chrome-512x512.png",
+  s + "/apple-touch-icon.png",
+  s + "/browserconfig.xml",
+  s + "/de-en.json",
+  s + "/de-es.json",
+  s + "/de-ru.json",
+  s + "/en-de.json",
+  s + "/en-es.json",
+  s + "/en-ru.json",
+  s + "/favicon-16x16.png",
+  s + "/favicon-32x32.png",
+  s + "/favicon.ico",
+  s + "/favicon.png",
+  s + "/mstile-150x150.png",
+  s + "/robots.txt",
+  s + "/ru-de.json",
+  s + "/ru-en.json",
+  s + "/ru-es.json",
+  s + "/safari-pinned-tab.svg",
+  s + "/site.webmanifest",
+  s + "/success.mp3",
+  s + "/wrong.mp3"
+], i = "1684667492213", n = self, p = `cache${i}`, m = d.concat(l), u = new Set(m);
+n.addEventListener("install", (e) => {
+  e.waitUntil(
     caches.open(p).then((a) => a.addAll(m)).then(() => {
       n.skipWaiting();
     })
   );
 });
-n.addEventListener("activate", (s) => {
-  s.waitUntil(
+n.addEventListener("activate", (e) => {
+  e.waitUntil(
     caches.keys().then(async (a) => {
       for (const t of a)
         t !== p && await caches.delete(t);
@@ -60,23 +60,23 @@ n.addEventListener("activate", (s) => {
     })
   );
 });
-async function h(s) {
+async function h(e) {
   const a = await caches.open(`offline${i}`);
   try {
-    const t = await fetch(s);
-    return a.put(s, t.clone()), t;
+    const t = await fetch(e);
+    return a.put(e, t.clone()), t;
   } catch (t) {
-    const c = await a.match(s);
+    const c = await a.match(e);
     if (c)
       return c;
     throw t;
   }
 }
-n.addEventListener("fetch", (s) => {
-  if (s.request.method !== "GET" || s.request.headers.has("range"))
+n.addEventListener("fetch", (e) => {
+  if (e.request.method !== "GET" || e.request.headers.has("range"))
     return;
-  const a = new URL(s.request.url), t = a.protocol.startsWith("http"), c = a.hostname === self.location.hostname && a.port !== self.location.port, o = a.host === self.location.host && d.has(a.pathname), r = s.request.cache === "only-if-cached" && !o;
-  t && !c && !r && s.respondWith(
-    (async () => o && await caches.match(s.request) || h(s.request))()
+  const a = new URL(e.request.url), t = a.protocol.startsWith("http"), c = a.hostname === self.location.hostname && a.port !== self.location.port, o = a.host === self.location.host && u.has(a.pathname), r = e.request.cache === "only-if-cached" && !o;
+  t && !c && !r && e.respondWith(
+    (async () => o && await caches.match(e.request) || h(e.request))()
   );
 });

@@ -36,6 +36,21 @@ export function getLanguages(): Array<LanguagePair> {
 			from: Language.English,
 			to: Language.Spain,
 			code: 'en-es'
+		},
+		{
+			from: Language.Russian,
+			to: Language.German,
+			code: 'ru-de'
+		},
+		{
+			from: Language.Russian,
+			to: Language.English,
+			code: 'ru-en'
+		},
+		{
+			from: Language.Russian,
+			to: Language.Spain,
+			code: 'ru-es'
 		}
 	];
 }

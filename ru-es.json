@@ -1,0 +1,152 @@
+[
+	{
+		"title": "Числа",
+		"values": {
+			"Один": "Uno",
+			"Два": "Dos",
+			"Три": "Tres",
+			"Четыре": "Cuatro",
+			"Пять": "Cinco",
+			"Шесть": "Seis",
+			"Семь": "Siete",
+			"Восемь": "Ocho",
+			"Девять": "Nueve",
+			"Десять": "Diez"
+		}
+	},
+	{
+		"title": "Цвета",
+		"values": {
+			"Красный": "Rojo",
+			"Синий": "Azul",
+			"Зеленый": "Verde",
+			"Желтый": "Amarillo",
+			"Оранжевый": "Naranja",
+			"Фиолетовый": "Violeta",
+			"Черный": "Negro",
+			"Белый": "Blanco",
+			"Коричневый": "Marrón",
+			"Розовый": "Rosa"
+		}
+	},
+	{
+		"title": "Семья",
+		"values": {
+			"Мать": "Madre",
+			"Отец": "Padre",
+			"Брат": "Hermano",
+			"Сестра": "Hermana",
+			"Сын": "Hijo",
+			"Дочь": "Hija",
+			"Бабушка": "Abuela",
+			"Дедушка": "Abuelo",
+			"Тетя": "Tía",
+			"Дядя": "Tío"
+		}
+	},
+	{
+		"title": "Еда",
+		"values": {
+			"Яблоко": "Manzana",
+			"Банан": "Plátano",
+			"Апельсин": "Naranja",
+			"Хлеб": "Pan",
+			"Сыр": "Queso",
+			"Молоко": "Leche",
+			"Яйцо": "Huevo",
+			"Курица": "Pollo",
+			"Рис": "Arroz",
+			"Помидор": "Tomate"
+		}
+	},
+	{
+		"title": "Животные",
+		"values": {
+			"Кот": "Gato",
+			"Собака": "Perro",
+			"Слон": "Elefante",
+			"Лев": "León",
+			"Тигр": "Tigre",
+			"Жираф": "Jirafa",
+			"Обезьяна": "Mono",
+			"Лошадь": "Caballo",
+			"Корова": "Vaca",
+			"Овца": "Oveja"
+		}
+	},
+	{
+		"title": "Тело",
+		"values": {
+			"Голова": "Cabeza",
+			"Глаз": "Ojo",
+			"Ухо": "Oreja",
+			"Нос": "Nariz",
+			"Рот": "Boca",
+			"Рука": "Mano",
+			"Нога": "Pierna",
+			"Стопа": "Pie",
+			"Сердце": "Corazón",
+			"Желудок": "Estómago"
+		}
+	},
+	{
+		"title": "Одежда",
+		"values": {
+			"Рубашка": "Camisa",
+			"Брюки": "Pantalón",
+			"Платье": "Vestido",
+			"Обувь": "Zapatos",
+			"Шляпа": "Sombrero",
+			"Куртка": "Chaqueta",
+			"Носки": "Calcetines",
+			"Перчатки": "Guantes",
+			"Юбка": "Falda",
+			"Свитер": "Suéter"
+		}
+	},
+	{
+		"title": "Школа",
+		"values": {
+			"Учитель": "Maestro",
+			"Студент": "Estudiante",
+			"Книга": "Libro",
+			"Перо": "Pluma",
+			"Карандаш": "Lápiz",
+			"Письменный стол": "Escritorio",
+			"Стул": "Silla",
+			"Школа": "Escuela",
+			"Класс": "Salón de clases",
+			"Домашнее задание": "Tarea"
+		}
+	},
+	{
+		"title": "Страны",
+		"values": {
+			"Испания": "España",
+			"Мексика": "México",
+			"Аргентина": "Argentina",
+			"Соединенные Штаты": "Estados Unidos",
+			"Франция": "Francia",
+			"Италия": "Italia",
+			"Германия": "Alemania",
+			"Канада": "Canadá",
+			"Бразилия": "Brasil",
+			"Япония": "Japón"
+		}
+	},
+	{
+		"title": "Транспорт",
+		"values": {
+			"Машина": "Coche",
+			"Велосипед": "Bicicleta",
+			"Автобус": "Autobús",
+			"Поезд": "Tren",
+			"Самолет": "Avión",
+			"Корабль": "Barco",
+			"Мотоцикл": "Motocicleta",
+			"Такси": "Taxi",
+			"Метро": "Metro",
+			"Ходить": "Caminar"
+		}
+	}
+]

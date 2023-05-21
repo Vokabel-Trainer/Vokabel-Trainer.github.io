@@ -49,7 +49,7 @@
 
 	function checkAnswer(text: string) {
 		const success = makeArray(vocable!).some(
-			(x) => x.toLocaleLowerCase() === text.toLocaleLowerCase()
+			(x) => x.toLocaleLowerCase() === text.trim().toLocaleLowerCase()
 		);
 		new Audio(success ? '/success.mp3' : '/wrong.mp3').play();
 		return success;

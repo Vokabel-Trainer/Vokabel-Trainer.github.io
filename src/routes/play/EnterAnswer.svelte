@@ -9,6 +9,7 @@
 	import { getRandomChoice, hasFlag } from '$lib/methods';
 	import { confetti } from '@neoconfetti/svelte';
 	import Question from './Question.svelte';
+	import { getTranslation } from '$lib/locales/translation';
 
 	export let question: string;
 	export let correctAnswers: string[];
@@ -42,7 +43,7 @@
 
 	<form class="flex flex-col items-center" on:submit={nextClick}>
 		<p class="mb-1">
-			Geben Sie das Wort in der Sprache {langName} an.
+			{getTranslation('enterWordInLang').replace('{lang}', getTranslation(langName))}
 		</p>
 
 		<div class="flex flex-row w-full justify-center flex-wrap gap-1">
@@ -53,7 +54,7 @@
 		<button
 			type="submit"
 			class={`btn mt-2 w-64 ${correct == null ? '' : correct ? 'btn-success' : 'btn-error'}`}
-			>Weiter</button
+			>{getTranslation('next')}</button
 		>
 	</form>
 
@@ -71,7 +72,7 @@
 				}}
 			/>
 		{:else}
-			Richtige Antworten:
+			{getTranslation('correctAnswers')}
 			{#if currentOutputType === OutputType.Audio}
 				<p>
 					{correctAnswers.join(', ')}
@@ -84,7 +85,7 @@
 		{/if}
 
 		{#if currentOutputType === OutputType.Audio}
-			Übersetzung: {question}
+			{getTranslation('translation')} {question}
 		{/if}
 	{/if}
 </div>

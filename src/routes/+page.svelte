@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { getTranslation } from '$lib/locales/translation';
 	import { anyCategoriesSelectedStore, languagePairStore } from '$lib/store';
 
 	$: langSelected = $languagePairStore != null;
@@ -11,12 +12,12 @@
 
 <div class="flex-1 flex justify-center items-center flex-wrap gap-1 flex-col sm:flex-row">
 	<a class={`btn ${langSelected && $anyCategoriesSelectedStore ? '' : 'btn-disabled'}`} href="/play"
-		>Starten</a
+		>{getTranslation('play')}</a
 	>
-	<a class="btn" href="/select-language">Sprache ändern</a>
+	<a class="btn" href="/select-language">{getTranslation('changeLanguage')}</a>
 	<a class={`btn ${langSelected ? '' : 'btn-disabled'}`} href="/select-categories"
-		>Kategorien auswählen</a
+		>{getTranslation('selectCategory')}</a
 	>
-	<a class="btn" href="/settings">Einstellungen</a>
-	<a class="btn" href="/aboutus">Über uns</a>
+	<a class="btn" href="/settings">{getTranslation('settings')}</a>
+	<a class="btn" href="/aboutus">{getTranslation('aboutUs')}</a>
 </div>

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { getAllVocables, saveVocable, type Vocable } from '$lib/db';
 	import { getAllInputTypes, getInputTypes, getSelectedLanguage, InputType } from '$lib/languages';
+	import { getTranslation } from '$lib/locales/translation';
 	import { getRandomChoice, getRandomNumberInRange, hasFlag, shuffleArray } from '$lib/methods';
 	import EnterAnswer from './EnterAnswer.svelte';
 	import SelectAnswer from './SelectAnswer.svelte';
@@ -84,7 +85,7 @@
 </script>
 
 <svelte:head>
-	<title>Vokabeln lernen</title>
+	<title>{getTranslation("learnVocables")}</title>
 	<meta name="description" content="Vokabeln lernen." />
 </svelte:head>
 

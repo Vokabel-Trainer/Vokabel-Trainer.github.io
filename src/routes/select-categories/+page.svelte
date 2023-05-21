@@ -2,6 +2,7 @@
 	import { goto } from '$app/navigation';
 	import { getSelectedCategories, storeFile } from '$lib/db';
 	import type { Category } from '$lib/languages';
+	import { getTranslation } from '$lib/locales/translation';
 	import { languagePairStore } from '$lib/store';
 
 	function getWords(category: Category): Array<string> {
@@ -60,7 +61,7 @@
 
 				<div class="collapse collapse-arrow bg-base-100 p-1">
 					<input type="checkbox" />
-					<div class="collapse-title text-xl font-medium">Enthaltene Wörter:</div>
+					<div class="collapse-title text-xl font-medium">{getTranslation("containedWords")}</div>
 					<div class="collapse-content">
 						{getWords(category).join(', ')}
 					</div>
@@ -73,5 +74,5 @@
 <button
 	class="btn w-32 self-center"
 	on:click={handleNextClick}
-	disabled={checkedCategories.length === 0}>Weiter</button
+	disabled={checkedCategories.length === 0}>{getTranslation("next")}</button
 >

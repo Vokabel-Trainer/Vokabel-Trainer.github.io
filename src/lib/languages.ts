@@ -57,14 +57,16 @@ export function getLanguages(): Array<LanguagePair> {
 
 export function getName(language: Language) {
 	switch (language) {
+		case Language.None:
+			throw new Error("No language doesn't have a name.");
 		case Language.German:
-			return 'Deutsch';
+			return 'german';
 		case Language.English:
-			return 'Englisch';
+			return 'english';
 		case Language.Russian:
-			return 'Russisch';
+			return 'russian';
 		case Language.Spain:
-			return 'Spanisch';
+			return 'spain';
 	}
 }
 
@@ -75,10 +77,11 @@ export type LanguagePair = {
 };
 
 export enum Language {
-	German,
-	English,
-	Russian,
-	Spain
+	None = 0,
+	English = 1,
+	German = 2,
+	Russian = 3,
+	Spain = 4
 }
 
 export function setSelectLanguage(language: LanguagePair) {
@@ -136,4 +139,19 @@ export function getOutputTypes() {
 		return OutputType.Text | OutputType.Audio;
 	}
 	return JSON.parse(inputType) as OutputType;
+}
+
+export function setSelectedApplicationLanguage(language: Language) {
+	localStorage.setItem('language', JSON.stringify(language));
+}
+
+export function getSelectedApplicationLanguage() {
+	const language = localStorage.getItem('language');
+	if (!language) {
+		if (navigator.language.toLocaleLowerCase().includes('de')) {
+			return Language.German;
+		}
+		return Language.English;
+	}
+	return JSON.parse(language) as Language;
 }

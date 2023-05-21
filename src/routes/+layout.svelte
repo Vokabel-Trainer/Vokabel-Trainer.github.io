@@ -3,6 +3,7 @@
 	import { page } from '$app/stores';
 	import { anyCategoriesSelected } from '$lib/db';
 	import { getName, getSelectedLanguage } from '$lib/languages';
+	import { getTranslation } from '$lib/locales/translation';
 	import { anyCategoriesSelectedStore, languagePairStore } from '$lib/store';
 	import '../app.css';
 
@@ -21,28 +22,28 @@
 </script>
 
 <main class="p-1 flex h-full w-full flex-col">
-	{#if browser}
-		{#if $languagePairStore}
-			<div class="flex mx-1 mt-1">
+	<div class="flex mx-1 mt-1">
+		{#if browser}
+			{#if $languagePairStore}
 				<p class="font-bold flex-1">
-					Ausgewählte Sprache: {getName($languagePairStore.from)} - {getName($languagePairStore.to)}
+					{getTranslation('selectedLanguage')
+						.replace('{from}', getTranslation(getName($languagePairStore.from)))
+						.replace('{to}', getTranslation(getName($languagePairStore.to)))}
 				</p>
 				<button
 					class={`btn btn-sm btn-circle ${showBackButton ? '' : 'hidden'}`}
 					on:click={handleBackClick}>X</button
 				>
-			</div>
-		{:else}
-			<div class="flex mx-1 mt-1">
-				<p class="font-bold flex-1">Aktuell ist keine Sprache ausgewählt.</p>
+			{:else}
+				<p class="font-bold flex-1">{getTranslation('noLanguageSelected')}</p>
 				<button
 					class={`btn btn-sm btn-circle ${showBackButton ? '' : 'hidden'}`}
 					on:click={handleBackClick}>X</button
 				>
-			</div>
+			{/if}
+		{:else}
+			<p class="font-bold">{getTranslation('loadSelectedLanguage')}</p>
 		{/if}
-	{:else}
-		<p class="font-bold">Ausgewählte Sprachen werden geladen.</p>
-	{/if}
+	</div>
 	<slot />
 </main>

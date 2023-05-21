@@ -12,25 +12,30 @@ export function getLanguages(): Array<LanguagePair> {
 			to: Language.English,
 			code: 'de-en'
 		},
-		// {
-		// 	from: Language.English,
-		// 	to: Language.German,
-		// 	code: 'en-de'
-		// },
 		{
 			from: Language.German,
 			to: Language.Russian,
 			code: 'de-ru'
 		},
-		// , {
-		// 	from: Language.Russian,
-		// 	to: Language.German,
-		// 	code: 'ru-de'
-		// }
 		{
 			from: Language.German,
 			to: Language.Spain,
 			code: 'de-es'
+		},
+		{
+			from: Language.English,
+			to: Language.German,
+			code: 'en-de'
+		},
+		{
+			from: Language.English,
+			to: Language.Russian,
+			code: 'en-ru'
+		},
+		{
+			from: Language.English,
+			to: Language.Spain,
+			code: 'en-es'
 		}
 	];
 }

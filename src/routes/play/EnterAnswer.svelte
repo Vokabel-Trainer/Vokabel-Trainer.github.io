@@ -1,5 +1,11 @@
 <script lang="ts">
-	import { OutputType, getAllOutputTypes, getOutputTypes } from '$lib/languages';
+	import {
+		OutputType,
+		getAllOutputTypes,
+		getName,
+		getOutputTypes,
+		getSelectedLanguage
+	} from '$lib/languages';
 	import { getRandomChoice, hasFlag } from '$lib/methods';
 	import { confetti } from '@neoconfetti/svelte';
 	import Question from './Question.svelte';
@@ -12,12 +18,6 @@
 
 	let correct: boolean | null = null;
 	let text: string;
-
-	$: {
-		correct = null;
-		// Refresh when temp changes.
-		const temp = question;
-	}
 
 	async function nextClick(e: Event) {
 		e.preventDefault();
@@ -33,12 +33,18 @@
 	let currentOutputType = getRandomChoice(
 		getAllOutputTypes().filter((x) => hasFlag(outputType, x))
 	);
+
+	const langName = getName(getSelectedLanguage()!.to);
 </script>
 
 <div class="flex-1 flex flex-col justify-center items-center">
 	<Question {question} {playAudio} answer={correctAnswers[0]} outputType={currentOutputType} />
 
-	<form on:submit={nextClick}>
+	<form class="flex flex-col items-center" on:submit={nextClick}>
+		<p class="mb-1">
+			Geben Sie das Wort in der Sprache {langName} an.
+		</p>
+
 		<div class="flex flex-row w-full justify-center flex-wrap gap-1">
 			<!-- svelte-ignore a11y-autofocus -->
 			<input type="text" readonly={correct != null} autofocus bind:value={text} />

@@ -141,12 +141,12 @@
 			"Fahrrad": "Bicycle",
 			"Bus": "Bus",
 			"Zug": "Train",
-			"Flugzeug": "Plane",
+			"Flugzeug": ["Plane", "Airplane"],
 			"Boot": "Boat",
 			"Motorrad": "Motorcycle",
 			"Taxi": "Taxi",
 			"U-Bahn": "Subway",
-			"Gehen": "Walk"
+			"Gehen": ["Walk", "Go"]
 		}
 	}
 ]
